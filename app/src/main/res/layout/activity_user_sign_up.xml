@@ -1,9 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".User_signUp">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/or_"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/login_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- a fitness coach -->
+
+    <TextView
+        android:id="@+id/a_fitch"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="62dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/a_fitch"
+        android:textAppearance="@style/a_fitch" />
+
+    <TextView
+        android:id="@+id/a_fitness_c"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="117dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/a_fitness_c"
+        android:textAppearance="@style/a_fitness_c" />
+
+    <LinearLayout
+        android:id="@+id/rectangle_1"
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="266dp"
+        android:background="@drawable/rectangle_1"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="50dp"
+            android:hint="닉네임"
+            android:textSize="13dp"
+            android:textColorHint="#FFF"
+            android:background="null"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rectangle_2"
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="326dp"
+        android:background="@drawable/rectangle_1" >
+
+        <EditText
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="50dp"
+            android:hint="아이디"
+            android:textSize="13dp"
+            android:textColorHint="#FFF"
+            android:background="null"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rectangle_3"
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="386dp"
+        android:background="@drawable/rectangle_1" >
+        <EditText
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="50dp"
+            android:hint="비밀번호"
+            android:textSize="13dp"
+            android:textColorHint="#FFF"
+            android:background="null"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/rectangle_4"
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="446dp"
+        android:background="@drawable/rectangle_2" />
+
+</RelativeLayout>
+
+
+
