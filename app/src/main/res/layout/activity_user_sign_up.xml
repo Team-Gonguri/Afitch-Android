@@ -9,7 +9,7 @@
     <!-- a fitness coach -->
 
     <TextView
-        android:id="@+id/a_fitch"
+        android:id="@+id/a_fitch2"
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:layout_alignParentLeft="true"
@@ -19,6 +19,7 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/a_fitch"
         android:textAppearance="@style/a_fitch" />
+
 
     <TextView
         android:id="@+id/a_fitness_c"
@@ -38,20 +39,27 @@
         android:layout_height="42dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="88dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="266dp"
         android:background="@drawable/rectangle_1"
         android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/pencil"></ImageView>
+
         <EditText
+            android:id="@+id/user_nickname"
             android:layout_width="170dp"
             android:layout_height="42dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="10dp"
             android:hint="닉네임"
-            android:textSize="13dp"
+            android:background="@null"
             android:textColorHint="#FFF"
-            android:background="null"
-            />
+            android:textSize="13dp" />
 
     </LinearLayout>
 
@@ -61,19 +69,26 @@
         android:layout_height="42dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="88dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="326dp"
-        android:background="@drawable/rectangle_1" >
+        android:background="@drawable/rectangle_1">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/nickname"></ImageView>
 
         <EditText
+            android:id="@+id/user_id"
             android:layout_width="170dp"
             android:layout_height="42dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="10dp"
             android:hint="아이디"
-            android:textSize="13dp"
+            android:background="@null"
             android:textColorHint="#FFF"
-            android:background="null"
-            />
+            android:textSize="13dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -82,29 +97,67 @@
         android:layout_height="42dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="88dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="386dp"
-        android:background="@drawable/rectangle_1" >
+        android:background="@drawable/rectangle_1">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/password">
+
+        </ImageView>
+
         <EditText
+            android:id="@+id/user_pw"
             android:layout_width="170dp"
             android:layout_height="42dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="10dp"
             android:hint="비밀번호"
-            android:textSize="13dp"
+            android:background="@null"
             android:textColorHint="#FFF"
-            android:background="null"
-            />
+            android:textSize="13dp" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/rectangle_4"
+        android:id="@+id/login_btn"
         android:layout_width="244dp"
         android:layout_height="42dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="88dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="446dp"
-        android:background="@drawable/rectangle_2" />
+        android:background="@drawable/rectangle_2"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="가입하기"
+        android:textColor="@color/pink100" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="110dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/white"
+            android:text="이미 회원이신가요? " />
+
+        <TextView
+            android:id="@+id/goto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="로그인" />
+
+
+    </LinearLayout>
 
 </RelativeLayout>
 
