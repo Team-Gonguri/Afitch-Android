@@ -33,35 +33,6 @@
         android:text="@string/a_fitness_c"
         android:textAppearance="@style/a_fitness_c" />
 
-    <LinearLayout
-        android:id="@+id/rectangle_1"
-        android:layout_width="244dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="266dp"
-        android:background="@drawable/rectangle_1"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/pencil"></ImageView>
-
-        <EditText
-            android:id="@+id/user_nickname"
-            android:layout_width="170dp"
-            android:layout_height="42dp"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:hint="닉네임"
-            android:textColorHint="#FFF"
-            android:textSize="13dp" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/rectangle_2"
@@ -70,7 +41,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="326dp"
+        android:layout_marginTop="296dp"
         android:background="@drawable/rectangle_1">
 
         <ImageView
@@ -81,12 +52,13 @@
             android:src="@drawable/nickname"></ImageView>
 
         <EditText
-            android:id="@+id/user_id"
+            android:id="@+id/login_id"
             android:layout_width="170dp"
             android:layout_height="42dp"
             android:layout_marginLeft="10dp"
-            android:hint="아이디"
             android:background="@null"
+            android:hint="닉네임"
+            android:maxLength="12"
             android:textColorHint="#FFF"
             android:textSize="13dp" />
     </LinearLayout>
@@ -98,7 +70,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="386dp"
+        android:layout_marginTop="356dp"
         android:background="@drawable/rectangle_1">
 
         <ImageView
@@ -111,12 +83,14 @@
         </ImageView>
 
         <EditText
-            android:id="@+id/user_pw"
+            android:id="@+id/login_pw"
             android:layout_width="170dp"
             android:layout_height="42dp"
             android:layout_marginLeft="10dp"
-            android:hint="비밀번호"
             android:background="@null"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:maxLength="12"
             android:textColorHint="#FFF"
             android:textSize="13dp" />
     </LinearLayout>
@@ -128,7 +102,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="446dp"
+        android:layout_marginTop="416dp"
         android:background="@drawable/rectangle_2"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"

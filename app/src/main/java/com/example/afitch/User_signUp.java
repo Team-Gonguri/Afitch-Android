@@ -33,6 +33,8 @@ public class User_signUp extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),User_login.class);
                 startActivity(intent);
 
+
+
             }
         });
     }
