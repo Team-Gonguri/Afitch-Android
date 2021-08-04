@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Afitch">
         <activity
+            android:name=".Food_recommend"
+            android:exported="true" />
+        <activity
+            android:name=".Food_Main"
+            android:exported="true" />
+        <activity
             android:name=".User_settings"
             android:exported="true" />
         <activity
