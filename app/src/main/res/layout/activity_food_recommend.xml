@@ -17,12 +17,62 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="90dp"
-        android:text="오늘의 식단"
+        android:text="식단분석"
         android:textColor="#ffffff"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:textStyle="bold"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/recommend_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
 
+
+                <View
+                    android:id="@+id/recommend_1"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_2" />
+
+                <View
+                    android:id="@+id/recommend_2"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rectangle_1" />
+
+                <View
+                    android:id="@+id/recommend_3"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_2" />
+
+                <View
+                    android:id="@+id/recommend_4"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/rectangle_1" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </RelativeLayout>

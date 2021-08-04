@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Afitch">
         <activity
+            android:name=".Food_add"
+            android:exported="true" />
+        <activity
             android:name=".Food_recommend"
             android:exported="true" />
         <activity

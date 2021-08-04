@@ -7,11 +7,13 @@
         <entry key="app/src/main/res/drawable/rectangle_1.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/rectangle_2.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/rectangle_3.xml" value="0.2984375" />
+        <entry key="app/src/main/res/drawable/search.xml" value="0.165625" />
         <entry key="app/src/main/res/layout/activity_diet_main.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_diet_recommend.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_diet_register.xml" value="0.16770833333333332" />
-        <entry key="app/src/main/res/layout/activity_food_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_food_recommend.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/activity_food_add.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_food_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_food_recommend.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_ranking_detail.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_ranking_main.xml" value="0.16770833333333332" />

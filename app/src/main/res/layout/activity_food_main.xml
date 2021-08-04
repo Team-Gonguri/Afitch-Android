@@ -19,44 +19,45 @@
         android:layout_marginTop="90dp"
         android:text="오늘의 식단"
         android:textColor="#ffffff"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:textStyle="bold"/>
 
-    <ScrollView
-        android:id="@+id/main_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="140dp"
             android:gravity="center"
             android:orientation="vertical">
 
             <View
-                android:id="@+id/rectangle_1"
+                android:id="@+id/percent_of_food"
                 android:layout_width="350dp"
                 android:layout_height="145dp"
                 android:background="@drawable/rectangle_1" />
+
+            <ScrollView
+                android:id="@+id/main_scroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <View
-                    android:id="@+id/rectangle_2"
+                    android:id="@+id/back_of_food"
                     android:layout_width="350dp"
                     android:layout_height="350dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rectangle_2" />
 
                 <View
-                    android:id="@+id/rectangle_3_1"
+                    android:id="@+id/breakfast_back"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
@@ -65,67 +66,109 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
                     android:layout_marginTop="50dp"
                     android:src="@drawable/breakfast" />
 
+                <TextView
+                    android:id="@+id/text_breakfast"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="150dp"
+                    android:text="아침"
+                    android:textColor="#000000"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
                 <View
-                    android:id="@+id/rectangle_3_2"
+                    android:id="@+id/launch_back"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:layout_marginLeft="180dp"
+                    android:layout_marginStart="180dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/rectangle_3" />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="210dp"
+                    android:layout_marginStart="210dp"
                     android:layout_marginTop="50dp"
                     android:src="@drawable/launch" />
 
+                <TextView
+                    android:id="@+id/text_launch"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="235dp"
+                    android:layout_marginTop="150dp"
+                    android:text="점심"
+                    android:textColor="#000000"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
                 <View
-                    android:id="@+id/rectangle_3_3"
+                    android:id="@+id/dinner_back"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="190dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/rectangle_3" />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
                     android:layout_marginTop="220dp"
                     android:src="@drawable/dinner" />
 
+                <TextView
+                    android:id="@+id/text_dinner"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="320dp"
+                    android:text="저녁"
+                    android:textColor="#000000"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
                 <View
-                    android:id="@+id/rectangle_3_4"
+                    android:id="@+id/snack_back"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
-                    android:layout_marginLeft="180dp"
+                    android:layout_marginStart="180dp"
                     android:layout_marginTop="190dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/rectangle_3" />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="210dp"
+                    android:layout_marginStart="210dp"
                     android:layout_marginTop="220dp"
                     android:src="@drawable/snack" />
 
+                <TextView
+                    android:id="@+id/text_snack"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="235dp"
+                    android:layout_marginTop="320dp"
+                    android:text="간식"
+                    android:textColor="#000000"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
             </RelativeLayout>
+            </ScrollView>
 
 
         </LinearLayout>
 
-    </ScrollView>
+
 
 
 </RelativeLayout>
