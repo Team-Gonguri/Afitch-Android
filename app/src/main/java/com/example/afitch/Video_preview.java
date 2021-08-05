@@ -2,6 +2,7 @@ package com.example.afitch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -90,6 +91,14 @@ public class Video_preview extends AppCompatActivity {
                 updateSeekbar();
             }
         });
+        // 영상 끝나면 실행될것
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                Intent intent = new Intent(getApplicationContext(),Video_recording.class);
+                startActivity(intent);
+            }
+        });
     }
     protected void playVideoView() {
         videoView.start();
@@ -101,12 +110,22 @@ public class Video_preview extends AppCompatActivity {
 
     protected void goForwardVideoView() {
         int currentPosition = videoView.getCurrentPosition();
-        videoView.seekTo(currentPosition+10000);
+        if (currentPosition + 5000 < videoView.getDuration()) {
+            videoView.seekTo(currentPosition + 5000);
+        }
+        else{
+            videoView.seekTo(videoView.getDuration());
+        }
     }
 
     protected void goBackVideoView() {
         int currentPosition = videoView.getCurrentPosition();
-        videoView.seekTo(currentPosition-10000);
+        if(currentPosition>5000) {
+            videoView.seekTo(currentPosition - 5000);
+        }
+        else{
+            videoView.seekTo(0);
+        }
     }
 
     protected void updateSeekbar(){
@@ -127,6 +146,9 @@ public class Video_preview extends AppCompatActivity {
     private Runnable updateVideoTime = new Runnable(){
         public void run(){
             long currentPosition = videoView.getCurrentPosition();
+            if (currentPosition == 0){
+
+            }
             seekBar.setProgress((int) currentPosition);
             updateHandler.postDelayed(this, 100);
 
