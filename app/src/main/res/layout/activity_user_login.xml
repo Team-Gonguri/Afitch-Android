@@ -1,9 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".User_login">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/or_"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/login_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- a fitness coach -->
+
+    <TextView
+        android:id="@+id/a_fitch"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="62dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/a_fitch"
+        android:textAppearance="@style/a_fitch" />
+
+
+    <TextView
+        android:id="@+id/a_fitness_c"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="117dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/a_fitness_c"
+        android:textAppearance="@style/a_fitness_c" />
+
+
+    <LinearLayout
+        android:id="@+id/rectangle_2"
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="296dp"
+        android:background="@drawable/rectangle_1">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/nickname"></ImageView>
+
+        <EditText
+            android:id="@+id/login_id"
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="닉네임"
+            android:maxLength="12"
+            android:textColorHint="#FFF"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rectangle_3"
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/rectangle_1">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/password">
+
+        </ImageView>
+
+        <EditText
+            android:id="@+id/login_pw"
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:textColorHint="#FFF"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="416dp"
+        android:background="@drawable/rectangle_2"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="로그인"
+        android:textColor="@color/pink100" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/white"
+            android:text="회원이 아니신가요? " />
+
+        <TextView
+            android:id="@+id/goto_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="함께해 주세요." />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+

@@ -1,9 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".User_signUp">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/login_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- a fitness coach -->
+
+    <TextView
+        android:id="@+id/a_fitch2"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="62dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/a_fitch"
+        android:textAppearance="@style/a_fitch" />
+
+
+    <TextView
+        android:id="@+id/a_fitness_c"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="117dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/a_fitness_c"
+        android:textAppearance="@style/a_fitness_c" />
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="204dp"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/rectangle_1"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/user_age"
+            android:layout_width="65dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="나이"
+            android:textColorHint="#FFF"
+            android:textSize="13dp"
+            android:maxLength="2"/>/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:text="세(만)"
+            android:textColor="#65FFFFFF"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/a_fitness_c"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="99dp"
+        android:background="@drawable/rectangle_1">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/nickname"></ImageView>
+
+        <EditText
+            android:id="@+id/signup_id"
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="닉네임"
+            android:maxLength="12"
+            android:textColorHint="#FFF"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="296dp"
+        android:background="@drawable/rectangle_1">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/password">
+
+        </ImageView>
+
+        <EditText
+            android:id="@+id/signup_pw"
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="비밀번호"
+            android:maxLength="12"
+            android:inputType="textPassword"
+            android:textColorHint="#FFF"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="416dp"
+        android:background="@drawable/rectangle_1">
+
+
+        <EditText
+            android:id="@+id/user_height"
+            android:layout_width="80dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="키"
+            android:maxLength="3"
+            android:textColorHint="#FFF"
+            android:textSize="13dp" />/>
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="42dp"
+            android:text="cm"
+            android:textColor="#65FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="204dp"
+        android:layout_marginTop="416dp"
+        android:background="@drawable/rectangle_1">
+
+
+        <EditText
+            android:id="@+id/user_weight"
+            android:layout_width="80dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="몸무게"
+            android:maxLength="3"
+            android:textColorHint="#FFF"
+            android:textSize="13dp" />/>
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="42dp"
+            android:text="kg"
+            android:textColor="#65FFFFFF" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/rectangle_1">
+
+        <RadioGroup
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:checkedButton="@id/user_man">
+
+            <RadioButton
+                android:id="@+id/user_man"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/white"
+                android:text="남"
+                android:textColor="#FFF"
+                android:textSize="13dp" />
+
+            <RadioButton
+                android:id="@+id/user_woman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/white"
+                android:text="여"
+                android:textColor="#FFF"
+                android:textSize="13dp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signup_btn"
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="476dp"
+        android:background="@drawable/rectangle_2"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="가입하기"
+        android:textColor="@color/pink100" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="110dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/white"
+            android:text="이미 회원이신가요? " />
+
+        <TextView
+            android:id="@+id/goto_login"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="로그인" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
