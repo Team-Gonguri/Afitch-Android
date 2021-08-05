@@ -4,6 +4,725 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fontFamily="@font/fontstyle"
+    android:background="@drawable/ranking_background"
     tools:context=".Ranking_main">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="216dp"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/blur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/kind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1.5"
+            android:fontFamily="@font/notosans_thin"
+            android:includeFontPadding="false"
+            android:text="스쿼트"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/myeongyee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/fontstyle"
+            android:includeFontPadding="false"
+            android:text="명예의 전당"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/pink"
+        android:layout_width="331dp"
+        android:layout_height="305dp"
+        android:layout_marginTop="3dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.841"
+        app:srcCompat="@drawable/pink" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/pink"
+        app:layout_constraintEnd_toEndOf="@+id/pink"
+        app:layout_constraintStart_toStartOf="@+id/pink"
+        app:layout_constraintTop_toTopOf="@+id/pink">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/view_rank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="1등" />
+
+            <TextView
+                android:id="@+id/view_rank2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_rank3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_rank4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_rank5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_rank6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_rank7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_rank8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_rank9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_rank10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/view_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="헬창헬창" />
+
+            <TextView
+                android:id="@+id/view_nickname2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_nickname3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_nickname4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_nickname5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_nickname6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_nickname7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_nickname8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_nickname9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_nickname10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/fontstyle"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/view_goingto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="보러가기" />
+
+            <TextView
+                android:id="@+id/view_goingto2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_goingto3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_goingto4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_goingto5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_goingto6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_goingto7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_goingto8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_goingto9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_goingto10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/view_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="점수" />
+
+            <TextView
+                android:id="@+id/view_score2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_score3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_score4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_score5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_score6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_score7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_score8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_score9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/view_score10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="66dp"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button19"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:includeFontPadding="false"
+                android:text="Button" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/blur"
+        android:layout_width="345dp"
+        android:layout_height="115dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="38dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246"
+        app:srcCompat="@drawable/blur" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="138dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/fontstyle"
+        android:text="초기화까지 00시간 남았습니다."
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pink" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="337dp"
+
+        android:layout_height="56dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/blur">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/kind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:fontFamily="@font/notosans_thin"
+                android:includeFontPadding="false"
+                android:text="     나는 지금"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/myeongyee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="00등"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fontstyle"
+                android:text="00점"
+                android:includeFontPadding="false"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="332dp"
+        android:layout_height="56dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/blur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontstyle"
+            android:includeFontPadding="false"
+            android:text="    분발하세요 !"
+            android:textColor="#3E2723"
+            android:textSize="30sp"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
