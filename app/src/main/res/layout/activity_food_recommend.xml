@@ -47,7 +47,7 @@
                     android:layout_width="350dp"
                     android:layout_height="170dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_2" />
+                    android:background="@drawable/rectangle_6" />
 
                 <View
                     android:id="@+id/recommend_2"
@@ -55,14 +55,14 @@
                     android:layout_height="170dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/rectangle_1" />
+                    android:background="@drawable/rectangle_4" />
 
                 <View
                     android:id="@+id/recommend_3"
                     android:layout_width="350dp"
                     android:layout_height="170dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/rectangle_2" />
+                    android:background="@drawable/rectangle_6" />
 
                 <View
                     android:id="@+id/recommend_4"
@@ -70,7 +70,7 @@
                     android:layout_height="170dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp"
-                    android:background="@drawable/rectangle_1" />
+                    android:background="@drawable/rectangle_4" />
 
             </LinearLayout>
         </ScrollView>
