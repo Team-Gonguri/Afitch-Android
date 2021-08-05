@@ -73,7 +73,7 @@
                     <ImageView
                         android:layout_width="180dp"
                         android:layout_height="170dp"
-                        android:src="@drawable/aa"
+                        android:src="@drawable/haha"
                         android:scaleType="centerCrop">
                     </ImageView>
                     <TextView
@@ -93,52 +93,7 @@
                     <ImageView
                         android:layout_width="180dp"
                         android:layout_height="170dp"
-                        android:src="@drawable/aa"
-                        android:scaleType="centerCrop">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="180dp"
-                        android:layout_height="20dp"
-                        android:text="스쿼트"
-                        android:fontFamily="@font/poppins_regular"
-                        android:gravity="center"/>
-
-                </LinearLayout>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_margin="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="180dp"
-                        android:layout_height="170dp"
-                        android:src="@drawable/aa"
-                        android:scaleType="centerCrop">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="180dp"
-                        android:layout_height="20dp"
-                        android:text="스쿼트"
-                        android:fontFamily="@font/poppins_regular"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_margin="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="180dp"
-                        android:layout_height="170dp"
-                        android:src="@drawable/aa"
+                        android:src="@drawable/haha"
                         android:scaleType="centerCrop">
                     </ImageView>
                     <TextView
@@ -163,7 +118,7 @@
                     <ImageView
                         android:layout_width="180dp"
                         android:layout_height="170dp"
-                        android:src="@drawable/aa"
+                        android:src="@drawable/haha"
                         android:scaleType="centerCrop">
                     </ImageView>
                     <TextView
@@ -183,7 +138,52 @@
                     <ImageView
                         android:layout_width="180dp"
                         android:layout_height="170dp"
-                        android:src="@drawable/aa"
+                        android:src="@drawable/haha"
+                        android:scaleType="centerCrop">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:text="스쿼트"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:src="@drawable/haha"
+                        android:scaleType="centerCrop">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:text="스쿼트"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:src="@drawable/haha"
                         android:scaleType="centerCrop">
                     </ImageView>
                     <TextView

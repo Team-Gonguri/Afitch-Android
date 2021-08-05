@@ -228,7 +228,7 @@
         android:background="@drawable/rectangle_2"
         android:fontFamily="@font/poppins_semibold"
         android:text="가입하기"
-        android:textColor="@color/pink100" />
+        android:textColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
