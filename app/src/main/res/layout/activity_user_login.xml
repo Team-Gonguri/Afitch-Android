@@ -103,11 +103,11 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="416dp"
-        android:background="@drawable/rectangle_2"
+        android:background="@drawable/rectangle_2_1"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:text="로그인"
-        android:textColor="@color/white" />
+        android:textColor="@color/pink100" />
 
     <LinearLayout
         android:layout_width="match_parent"
