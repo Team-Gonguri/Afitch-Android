@@ -2,6 +2,7 @@ package com.example.afitch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class Date_Video_Diet extends AppCompatActivity {
             TextView text = new TextView(this);
             text.setText("스쿼트");
             text.setTextSize(20);
+            text.setTextColor(Color.parseColor("#FFFFFF"));
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             layoutParams.leftMargin = 70;
             layoutParams.gravity = Gravity.CENTER;
