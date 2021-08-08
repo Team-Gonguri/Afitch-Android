@@ -32,7 +32,6 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/kind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="50dp"
@@ -43,7 +42,6 @@
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/myeongyee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

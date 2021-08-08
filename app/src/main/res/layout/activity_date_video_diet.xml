@@ -77,6 +77,8 @@
     </HorizontalScrollView>
 
     <View
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:background="@color/pink100"/>
@@ -116,14 +118,14 @@
                     android:fontFamily="@font/poppins_regular"
                     android:text="아침 : "
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/kcal_breakfast"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/poppins_semibold"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="300kcal"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
@@ -136,14 +138,14 @@
                     android:fontFamily="@font/poppins_regular"
                     android:text="  점심 : "
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/kcal_lunch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/poppins_semibold"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="200kcal"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
@@ -162,14 +164,14 @@
                     android:fontFamily="@font/poppins_regular"
                     android:text="저녁 : "
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/kcal_dinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/poppins_semibold"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="300kcal"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
@@ -182,14 +184,14 @@
                     android:fontFamily="@font/poppins_regular"
                     android:text="  간식 : "
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/kcal_snack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/poppins_semibold"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="200kcal"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
@@ -216,7 +218,6 @@
                 android:layout_gravity="center"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-
                 android:background="@drawable/search">
             </Button>
         </LinearLayout>
