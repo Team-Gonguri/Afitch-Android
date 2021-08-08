@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Afitch">
         <activity
+            android:name=".User_infoEdit"
+            android:exported="true" />
+        <activity
             android:name=".Food_make"
             android:exported="true" />
         <activity
@@ -29,7 +32,7 @@
             android:exported="true" />
         <activity
             android:name=".Video_preview"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".User_signUp"
             android:exported="true" />
