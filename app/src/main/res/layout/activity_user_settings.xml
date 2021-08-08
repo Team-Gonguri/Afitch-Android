@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/settingback"
+    android:background="@drawable/login_background"
     android:fontFamily="@font/fontstyle"
     tools:context=".User_settings">
 
@@ -21,32 +21,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="414dp"
-        android:layout_height="346dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="408dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/white" />
-
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="250dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="76dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,15 +58,27 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"/>
+
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosans_thin"
             android:includeFontPadding="false"
-            android:text="AFITCH와 함께한 시간은?"
+            android:text=" 와 함께한 시간은?"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView12"
@@ -112,99 +106,109 @@
         app:layout_constraintVertical_bias="0.09"
         app:srcCompat="@drawable/profileimage" />
 
+
     <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/linearLayout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        tools:layout_editor_absoluteY="459dp"
-        tools:ignore="MissingConstraints">
+        android:orientation="vertical">
+
+        <View
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:background="@color/pink100"/>
 
         <TextView
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans_thin"
+            android:fontFamily="@font/notosans_light"
             android:includeFontPadding="false"
             android:text="회원 정보 수정"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/imageView11"
+        <View
+            android:layout_margin="7dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/line" />
+            android:layout_height="1px"
+            android:background="#E6000000"/>
+
 
         <TextView
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
             android:id="@+id/textView16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans_thin"
+            android:fontFamily="@font/notosans_light"
             android:includeFontPadding="false"
             android:text="음악 설정"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/imageView14"
+        <View
+            android:layout_margin="7dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/line" />
+            android:layout_height="1px"
+            android:background="#e6000000"/>
+
 
         <TextView
+            android:layout_weight="1"
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans_thin"
+            android:layout_marginLeft="7dp"
+            android:fontFamily="@font/notosans_light"
             android:includeFontPadding="false"
             android:text="모든 설정 초기화"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/imageView15"
+        <View
+            android:layout_margin="7dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/line" />
+            android:layout_height="1px"
+            android:background="#e6000000"/>
 
         <TextView
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans_thin"
+            android:fontFamily="@font/notosans_light"
             android:includeFontPadding="false"
             android:text="개발자에게 문의 / 피드백"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/line" />
+        <View
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e6000000"/>
+
 
         <TextView
+            android:layout_weight="1"
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans_thin"
+            android:layout_marginLeft="7dp"
+            android:fontFamily="@font/notosans_light"
             android:includeFontPadding="false"
             android:text="로그아웃"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/line" />
     </LinearLayout>
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="private"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="371dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

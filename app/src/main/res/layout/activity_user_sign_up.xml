@@ -49,6 +49,8 @@
             android:layout_marginLeft="10dp"
             android:background="@null"
             android:hint="나이"
+            android:fontFamily="@font/notosans_light"
+            android:includeFontPadding="false"
             android:textColorHint="#FFF"
             android:textSize="13dp"
             android:maxLength="2"/>/>
@@ -85,6 +87,8 @@
             android:layout_marginLeft="10dp"
             android:background="@null"
             android:hint="닉네임"
+            android:fontFamily="@font/notosans_light"
+            android:includeFontPadding="false"
             android:maxLength="12"
             android:textColorHint="#FFF"
             android:textSize="13dp" />
@@ -115,6 +119,8 @@
             android:layout_marginLeft="10dp"
             android:background="@null"
             android:hint="비밀번호"
+            android:fontFamily="@font/notosans_light"
+            android:includeFontPadding="false"
             android:maxLength="12"
             android:inputType="textPassword"
             android:textColorHint="#FFF"
@@ -138,6 +144,8 @@
             android:layout_marginLeft="10dp"
             android:background="@null"
             android:hint="키"
+            android:fontFamily="@font/notosans_light"
+            android:includeFontPadding="false"
             android:maxLength="3"
             android:textColorHint="#FFF"
             android:textSize="13dp" />/>
@@ -166,6 +174,8 @@
             android:layout_marginLeft="10dp"
             android:background="@null"
             android:hint="몸무게"
+            android:fontFamily="@font/notosans_light"
+            android:includeFontPadding="false"
             android:maxLength="3"
             android:textColorHint="#FFF"
             android:textSize="13dp" />/>
@@ -201,6 +211,8 @@
                 android:layout_weight="1"
                 android:buttonTint="@color/white"
                 android:text="남"
+                android:fontFamily="@font/notosans_light"
+                android:includeFontPadding="false"
                 android:textColor="#FFF"
                 android:textSize="13dp" />
 
@@ -211,6 +223,8 @@
                 android:layout_weight="1"
                 android:buttonTint="@color/white"
                 android:text="여"
+                android:fontFamily="@font/notosans_light"
+                android:includeFontPadding="false"
                 android:textColor="#FFF"
                 android:textSize="13dp" />
         </RadioGroup>

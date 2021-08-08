@@ -19,21 +19,6 @@
             android:name=".Food_recommend"
             android:exported="true" />
         <activity
-            android:name=".Food_Main"
-            android:exported="true" />
-        <activity
-            android:name=".Date_Video_Diet"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".User_settings"
-            android:exported="true" />
-        <activity
             android:name=".Video_finish"
             android:exported="true" />
         <activity
@@ -56,12 +41,16 @@
         <activity
             android:name=".Ranking_main"
             android:exported="true" />
-        <activity
-            android:name=".Home_main"
-            android:exported="true"/>
+
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
