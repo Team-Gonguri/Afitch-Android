@@ -34,12 +34,6 @@
             android:name=".User_settings"
             android:exported="true" />
         <activity
-            android:name=".Diet_register"
-            android:exported="true" />
-        <activity
-            android:name=".Diet_recommend"
-            android:exported="true" />
-        <activity
             android:name=".Video_finish"
             android:exported="true" />
         <activity
@@ -63,14 +57,8 @@
             android:name=".Ranking_main"
             android:exported="true" />
         <activity
-            android:name=".Home_detail"
-            android:exported="true" />
-        <activity
             android:name=".Home_main"
             android:exported="true"></activity>
-        <activity
-            android:name=".Diet_main"
-            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
