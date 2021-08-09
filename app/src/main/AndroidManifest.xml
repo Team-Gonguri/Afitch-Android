@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Afitch">
         <activity
-            android:name=".User_infoEdit"
+            android:name=".User_settings_edit"
             android:exported="true" />
         <activity
             android:name=".Food_make"

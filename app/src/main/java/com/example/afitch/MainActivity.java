@@ -43,4 +43,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void onFragmentChanged(int index) {
+        if(index == 0){
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,new User_settings_edit()).commit();
+        }
+    }
 }
