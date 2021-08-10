@@ -99,7 +99,11 @@ public class User_login extends AppCompatActivity {
                 Log.d("체크","로그인 실패");
             }
             else{
-                Log.d("체크","로그인성공");
+                // accessToken, refreshToken 다루기
+                /*
+                 */
+                Log.d("체크","로그인 성공");
+                // 홈 화면으로
             }
         }
     }
