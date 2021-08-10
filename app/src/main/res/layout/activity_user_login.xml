@@ -8,18 +8,18 @@
 
     <!-- a fitness coach -->
 
-    <TextView
+
+    <ImageView
         android:id="@+id/a_fitch"
-        android:layout_width="match_parent"
-        android:layout_height="79dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="62dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/a_fitch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/logo"
         android:textAppearance="@style/a_fitch" />
-
 
     <TextView
         android:id="@+id/a_fitness_c"
@@ -57,7 +57,7 @@
             android:layout_height="42dp"
             android:layout_marginLeft="10dp"
             android:background="@null"
-            android:hint="닉네임"
+            android:hint="아이디"
             android:fontFamily="@font/notosans_light"
             android:includeFontPadding="false"
             android:maxLength="12"
