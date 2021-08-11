@@ -63,7 +63,7 @@ public class User_settings_edit extends Fragment {
                 }
 
                 // AsyncTask를 통해 HttpURLConnection 수행.
-                NetworkTask networkTask = new NetworkTask(url, values);
+                NetworkTask networkTask = new NetworkTask(url, values,"POST");
                 networkTask.execute();
 
 
@@ -94,7 +94,7 @@ public class User_settings_edit extends Fragment {
                         String url = "http://3.36.65.27:8080/user";
                         JSONObject values = new JSONObject();
                         try {
-                            values.put("nickname",nicknameEdit);
+                            values.put("nickname",value);
 
                             System.out.println(values);
 
@@ -103,7 +103,7 @@ public class User_settings_edit extends Fragment {
                         }
 
                         // AsyncTask를 통해 HttpURLConnection 수행.
-                        NetworkTask networkTask = new NetworkTask(url, values);
+                        NetworkTask networkTask = new NetworkTask(url, values,"POST");
                         networkTask.execute();
 
                     }
@@ -117,13 +117,15 @@ public class User_settings_edit extends Fragment {
 
     }
 
-    public class NetworkTask extends AsyncTask<Void, Void, String> {
+    public static class NetworkTask extends AsyncTask<Void, Void, String> {
         private String url;
         private JSONObject values;
+        private String type;
 
-        public NetworkTask(String url, JSONObject values) {
+        public NetworkTask(String url, JSONObject values,String type) {
             this.url = url;
             this.values = values;
+            this.type = type;
         }
 
         @Override
@@ -131,7 +133,7 @@ public class User_settings_edit extends Fragment {
             Log.d("체크","doInBackground 진입");
             String result; // 요청 결과를 저장할 변수.
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.request(url, values); // 해당 URL로 부터 결과물을 얻어온다.
+            result = requestHttpURLConnection.request(url, values,type); // 해당 URL로 부터 결과물을 얻어온다.
             return result;
         }
 

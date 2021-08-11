@@ -24,6 +24,7 @@
         app:srcCompat="@drawable/logo" />
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -36,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="50dp"
             android:layout_weight="1.5"
-            android:fontFamily="@font/notosans_thin"
+            android:fontFamily="@font/poppins_light"
             android:includeFontPadding="false"
             android:text="스쿼트"
             android:textSize="30sp" />
@@ -45,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/fontstyle"
+            android:fontFamily="@font/notosans_light"
             android:includeFontPadding="false"
             android:text="명예의 전당"
             android:textColor="@color/black"
@@ -57,14 +58,12 @@
         android:id="@+id/pink"
         android:layout_width="331dp"
         android:layout_height="305dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.841"
+        app:layout_constraintTop_toBottomOf="@+id/blur"
         app:srcCompat="@drawable/pink" />
 
     <LinearLayout
@@ -92,7 +91,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="1등" />
+                android:text="1." />
 
             <TextView
                 android:id="@+id/view_rank2"
@@ -102,7 +101,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="2." />
 
             <TextView
                 android:id="@+id/view_rank3"
@@ -112,7 +111,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="3." />
 
             <TextView
                 android:id="@+id/view_rank4"
@@ -122,7 +121,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="4." />
 
             <TextView
                 android:id="@+id/view_rank5"
@@ -132,7 +131,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="5." />
 
             <TextView
                 android:id="@+id/view_rank6"
@@ -142,7 +141,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="6." />
 
             <TextView
                 android:id="@+id/view_rank7"
@@ -152,7 +151,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="7." />
 
             <TextView
                 android:id="@+id/view_rank8"
@@ -162,7 +161,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="8." />
 
             <TextView
                 android:id="@+id/view_rank9"
@@ -172,7 +171,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="9." />
 
             <TextView
                 android:id="@+id/view_rank10"
@@ -182,7 +181,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="10." />
         </LinearLayout>
 
         <LinearLayout
@@ -193,7 +192,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/view_nickname"
+                android:id="@+id/view_nickname1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -310,7 +309,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="보러가기" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto2"
@@ -320,7 +319,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto3"
@@ -330,7 +329,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto4"
@@ -340,7 +339,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto5"
@@ -350,7 +349,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto6"
@@ -360,7 +359,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto7"
@@ -370,7 +369,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto8"
@@ -380,7 +379,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto9"
@@ -390,7 +389,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
 
             <TextView
                 android:id="@+id/view_goingto10"
@@ -400,14 +399,96 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
                 android:includeFontPadding="false"
-                android:text="TextView" />
+                android:text="님의 자세 보러가기" />
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton10"
+                android:layout_width="18dp"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton11"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton12"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton13"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton14"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="4dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton15"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton16"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton17"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton18"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton19"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/imageButton20"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginBottom="5dp"
+                android:src="@android:drawable/ic_media_play" />
+
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -511,121 +592,17 @@
                 android:text="TextView" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="66dp"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button12"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button13"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button15"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button16"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button18"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button19"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button20"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@android:color/background_light"
-                android:includeFontPadding="false"
-                android:text="Button" />
-
-        </LinearLayout>
-
 
     </LinearLayout>
 
+
+
     <ImageView
         android:id="@+id/blur"
-        android:layout_width="345dp"
-        android:layout_height="115dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="38dp"
+        android:layout_width="326dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -641,44 +618,43 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="36dp"
         android:fontFamily="@font/fontstyle"
         android:text="초기화까지 00시간 남았습니다."
         android:textColor="@color/white"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pink" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="337dp"
+        android:layout_width="wrap_content"
 
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/blur">
+        app:layout_constraintBottom_toBottomOf="@+id/blur"
+        app:layout_constraintEnd_toEndOf="@+id/blur"
+        app:layout_constraintStart_toStartOf="@+id/blur"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="324dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/kind"
+                android:id="@+id/iam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.5"
+                android:layout_weight="2"
                 android:fontFamily="@font/notosans_thin"
                 android:includeFontPadding="false"
-                android:text="     나는 지금"
+                android:text="나는 지금"
+                android:textAlignment="textStart"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/myeongyee"
+                android:id="@+id/myranking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -689,38 +665,36 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/score"
+                android:id="@+id/myscore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/fontstyle"
-                android:text="00점"
                 android:includeFontPadding="false"
+                android:text="00점"
                 android:textSize="30sp" />
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="332dp"
-        android:layout_height="56dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/blur"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/message"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/fontstyle"
-            android:includeFontPadding="false"
-            android:text="    분발하세요 !"
-            android:textColor="#3E2723"
-            android:textSize="30sp"
-            tools:ignore="TextContrastCheck" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/fontstyle"
+                android:includeFontPadding="false"
+                android:text="분발하세요 !"
+                android:textAlignment="textStart"
+                android:textColor="#3E2723"
+                android:textSize="30sp"
+                tools:ignore="TextContrastCheck" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

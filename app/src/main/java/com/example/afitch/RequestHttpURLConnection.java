@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class RequestHttpURLConnection {
 
-    public String request(String _url, JSONObject _params) {
+    public String request(String _url, JSONObject _params,String type) {
 
         // HttpURLConnection 참조 변수.
         HttpURLConnection urlConn = null;
@@ -35,7 +35,7 @@ public class RequestHttpURLConnection {
                 urlConn.setDoInput(true);
                 urlConn.setDoOutput(true);
                 urlConn.setUseCaches(false);
-                urlConn.setRequestMethod("POST");// URL 요청에 대한 메소드 설정 :// POST.
+                urlConn.setRequestMethod(type);// URL 요청에 대한 메소드 설정 :// POST.
 //                urlConn.setRequestProperty("Accept-Charset", "UTF-8"); // Accept-Charset 설정.
                 urlConn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
                 urlConn.setRequestProperty("Accept", "application/json; charset=utf-8");
