@@ -32,37 +32,6 @@
         android:text="@string/a_fitness_c"
         android:textAppearance="@style/a_fitness_c" />
 
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="356dp"
-        android:background="@drawable/rectangle_1"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/user_age"
-            android:layout_width="65dp"
-            android:layout_height="42dp"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:fontFamily="@font/notosans_light"
-            android:hint="나이"
-            android:includeFontPadding="false"
-            android:maxLength="2"
-            android:textColorHint="#FFF"
-            android:textSize="13dp" />/>
-
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="42dp"
-            android:text="세(만)"
-            android:textColor="#65FFFFFF"/>
-
-    </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="244dp"
@@ -71,7 +40,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="296dp"
         android:background="@drawable/rectangle_1">
 
         <ImageView
@@ -102,7 +71,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="416dp"
         android:background="@drawable/rectangle_1">
 
         <ImageView
@@ -132,7 +101,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="356dp"
         android:background="@drawable/rectangle_1">
 
         <ImageView
@@ -159,108 +128,6 @@
             android:textSize="13dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="416dp"
-        android:background="@drawable/rectangle_1">
-
-        <EditText
-            android:id="@+id/signup_height"
-            android:layout_width="80dp"
-            android:layout_height="42dp"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:fontFamily="@font/notosans_light"
-            android:hint="키"
-            android:includeFontPadding="false"
-            android:maxLength="3"
-            android:textColorHint="#FFF"
-            android:textSize="13dp" />
-
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="42dp"
-            android:text="cm"
-            android:textColor="#65FFFFFF" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="416dp"
-        android:background="@drawable/rectangle_1">
-
-
-        <EditText
-            android:id="@+id/signup_weight"
-            android:layout_width="80dp"
-            android:layout_height="42dp"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:hint="몸무게"
-            android:fontFamily="@font/notosans_light"
-            android:includeFontPadding="false"
-            android:maxLength="3"
-            android:textColorHint="#FFF"
-            android:textSize="13dp" />/>
-
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="42dp"
-            android:text="kg"
-            android:textColor="#65FFFFFF" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="356dp"
-        android:background="@drawable/rectangle_1">
-
-        <RadioGroup
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal"
-            android:checkedButton="@id/user_man">
-
-            <RadioButton
-                android:id="@+id/user_man"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/white"
-                android:text="남"
-                android:fontFamily="@font/notosans_light"
-                android:includeFontPadding="false"
-                android:textColor="#FFF"
-                android:textSize="13dp" />
-
-            <RadioButton
-                android:id="@+id/user_woman"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/white"
-                android:text="여"
-                android:fontFamily="@font/notosans_light"
-                android:includeFontPadding="false"
-                android:textColor="#FFF"
-                android:textSize="13dp" />
-        </RadioGroup>
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/signup_btn"
