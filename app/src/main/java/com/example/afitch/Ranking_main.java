@@ -77,7 +77,24 @@ public class Ranking_main extends Fragment {
         gotoBtn[10] = (ImageButton) view.findViewById(R.id.imageButton19);
 
 
-        String exercise_num = "1";
+
+        gotoBtn[1].setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void OnClick(View v){
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.onFragmentChanged(1);
+            }
+
+
+
+
+        }
+
+
+
+
+            String exercise_num = "1";
         String url = "http://3.36.65.27:8080/exercises/"+exercise_num+"/participation/list?order=RANKING";
 
         JSONObject values = new JSONObject();

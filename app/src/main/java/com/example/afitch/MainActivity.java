@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Date_Video_Diet()).commit();
                         break;
                     case R.id.fragment4:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new User_settings()).commit();//ranking view
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Ranking_detail()).commit();//ranking view
                         break;
                 }
                 return true;
