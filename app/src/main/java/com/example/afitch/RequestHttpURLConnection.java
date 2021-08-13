@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class RequestHttpURLConnection {
 
-    public JSONObject request(String _url, String method, Boolean response, JSONObject _params) {
+    public JSONObject request(String _url, String method, Boolean response, JSONObject _params, String header) {
 
         JSONObject result = new JSONObject();
         // HttpURLConnection 참조 변수.
@@ -51,6 +51,8 @@ public class RequestHttpURLConnection {
                 }
                 else if (method.equals("get"))
                         urlConn.setRequestMethod("GET");
+                if (header != null & !header.equals(""))
+                    urlConn.setRequestProperty("Authorization", header);
                 urlConn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
                 urlConn.setRequestProperty("Accept", "application/json; charset=utf-8");
 
@@ -88,7 +90,7 @@ public class RequestHttpURLConnection {
                 }
 
                 if (response == true) {
-                    if (urlConn.getResponseCode() == HttpURLConnection.HTTP_OK | urlConn.getResponseCode() == HttpURLConnection.HTTP_CREATED | urlConn.getResponseCode() == HttpURLConnection.HTTP_ACCEPTED) {
+                    if (urlConn.getResponseCode() >= 200 & urlConn.getResponseCode() <=299) {
                         // [2-4]. 읽어온 결과물 리턴.
                         // 요청한 URL의 출력물을 BufferedReader로 받는다.
                         BufferedReader reader = new BufferedReader(new InputStreamReader(urlConn.getInputStream(), Charset.forName("UTF-8")));
@@ -99,7 +101,6 @@ public class RequestHttpURLConnection {
                         while ((line = reader.readLine()) != null) {
                             page += line;
                         }
-                        Log.d("체크", "page : " + page);
                         result.put("response", page);
                     }
                 }

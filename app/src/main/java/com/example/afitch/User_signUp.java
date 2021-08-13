@@ -58,7 +58,7 @@ public class User_signUp extends AppCompatActivity {
                 id = edit_id.getText().toString();
                 pw = edit_pw.getText().toString();
                 nickName = edit_nickName.getText().toString();
-                signup_url = "http://3.36.65.27:8080/auth/sign-up?role=ROLE_USER";
+                signup_url = "http://3.36.65.27:8080/auth/sign-up?role=ROLE_ADMIN";
                 checkId_url = "http://3.36.65.27:8080/auth/id-duplicate?id=";
                 checkNickname_url = "http://3.36.65.27:8080/auth/nickname-duplicate?nickName=";
                 json_id = new JSONObject();
@@ -115,7 +115,7 @@ public class User_signUp extends AppCompatActivity {
             Log.d("체크","doInBackground 진입");
             JSONObject result; // 요청 결과를 저장할 변수.
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.request(url, method, response, values); // 해당 URL 로부터 결과물을 얻어온다.
+            result = requestHttpURLConnection.request(url, method, response, values, ""); // 해당 URL 로부터 결과물을 얻어온다.
             return result;
         }
 
