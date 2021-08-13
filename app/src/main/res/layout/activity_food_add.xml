@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="58dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="90dp"
+        android:text="식단 등록"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/search_food"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:background="@drawable/rectangle_6" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/search_icon" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="300dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/barcode" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/recommend_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_1"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="떡볶이"
+                        android:textColor="#000000"
+                        android:textSize="30dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_2"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="떡볶이"
+                        android:textColor="#000000"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_3"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="떡볶이"
+                        android:textColor="#000000"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_4"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:text="떡볶이"
+                        android:textColor="#000000"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

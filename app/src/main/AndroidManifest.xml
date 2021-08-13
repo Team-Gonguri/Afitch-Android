@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,24 +12,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Afitch">
+        android:theme="@style/Theme.Afitch"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".Date_Video_Diet"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".User_settings"
+            android:name=".Food_make"
             android:exported="true" />
         <activity
-            android:name=".Diet_register"
+            android:name=".Food_add"
             android:exported="true" />
         <activity
-            android:name=".Diet_recommend"
+            android:name=".Food_recommend"
             android:exported="true" />
         <activity
             android:name=".Video_finish"
@@ -38,15 +31,21 @@
             android:exported="true" />
         <activity
             android:name=".Video_preview"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".User_signUp"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".User_login"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".Ranking_detail"
             android:exported="true" />
@@ -54,17 +53,10 @@
             android:name=".Ranking_main"
             android:exported="true" />
         <activity
-            android:name=".Home_detail"
-            android:exported="true" />
-        <activity
-            android:name=".Home_main"
-            android:exported="true"></activity>
-        <activity
-            android:name=".Diet_main"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

@@ -73,10 +73,11 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/notosans_black"
+                    android:includeFontPadding="false"
+                    android:gravity="center"
                     android:text="전신 운동"
                     android:textColor="@color/white"
-                    android:textSize="18dp"
-                    android:gravity="center" />
+                    android:textSize="18dp" />
 
             </LinearLayout>
 
@@ -95,6 +96,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/notosans_black"
                     android:text="팔 운동"
+                    android:includeFontPadding="false"
                     android:textColor="@color/white"
                     android:textSize="18dp"
                     android:gravity="center" />
@@ -114,10 +116,11 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/notosans_black"
+                    android:gravity="center"
                     android:text="다리 운동"
+                    android:includeFontPadding="false"
                     android:textColor="@color/white"
-                    android:textSize="18dp"
-                    android:gravity="center" />
+                    android:textSize="18dp" />
 
             </LinearLayout>
 
@@ -135,6 +138,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/notosans_black"
                     android:text="복부 운동"
+                    android:includeFontPadding="false"
                     android:textColor="@color/white"
                     android:textSize="18dp"
                     android:gravity="center" />

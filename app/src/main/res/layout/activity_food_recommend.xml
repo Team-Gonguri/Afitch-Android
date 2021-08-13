@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/back">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="58dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="90dp"
+        android:text="식단분석"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/recommend_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <View
+                    android:id="@+id/recommend_1"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_6" />
+
+                <View
+                    android:id="@+id/recommend_2"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rectangle_4" />
+
+                <View
+                    android:id="@+id/recommend_3"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rectangle_6" />
+
+                <View
+                    android:id="@+id/recommend_4"
+                    android:layout_width="350dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/rectangle_4" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>
