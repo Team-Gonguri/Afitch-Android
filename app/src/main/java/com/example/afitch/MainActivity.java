@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
+
         // token 데이터 불러오기
         sf = getSharedPreferences("file", MODE_PRIVATE);
         accessToken = sf.getString("accessToken", "");
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                                 //Adding each element of JSON array into ArrayList
                                 exerciseCategory.add((String) jsonArray.get(i));
                             }
-                            System.out.println(exerciseCategory);
+                            System.out.println("운동종류 " + exerciseCategory);
                         }
                         // 기존 token 정보 지우기 & accessToken 재발급 요청
                         else {
