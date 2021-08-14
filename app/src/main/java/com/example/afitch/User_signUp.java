@@ -125,8 +125,9 @@ public class User_signUp extends AppCompatActivity {
             temp = s;
             System.out.println(temp);
 
-            // 아이디 중복결과
+            // 아이디 중복 확인
             if (num == 1){
+                Log.d("num","1");
                 try {
                     // "true" 이면 중복X
                     checkIdResponse = s.getString("response");
@@ -134,8 +135,9 @@ public class User_signUp extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-            // 닉네임 중복결과
+            // 닉네임 중복 확인
             else if (num == 2){
+                Log.d("num","2");
                 try {
                     // "true" 이면 중복X
                     checkNickResponse = s.getString("response");
@@ -159,6 +161,7 @@ public class User_signUp extends AppCompatActivity {
                 }
                 // 둘다 중복아님
                 else if(checkIdResponse.equals("true") && checkNickResponse.equals("true")){
+                    Log.d("num","OK");
                     // 회원가입
                     NetworkTask networkTask3 = new NetworkTask(signup_url, "post", true, signup_info, 3);
                     networkTask3.execute();
@@ -171,10 +174,14 @@ public class User_signUp extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 if (checkSignupResponse.equals("201")){
+                    Log.d("num","3");
                     Toast toast4 = Toast.makeText(getApplicationContext(),"회원가입에 성공하였습니다.", Toast.LENGTH_SHORT);
                     toast4.show();
                     Intent intent = new Intent(getApplicationContext(),User_login.class);
                     startActivity(intent);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"비밀번호를 올바르게 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         }

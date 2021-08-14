@@ -63,7 +63,6 @@ public class RequestHttpURLConnection {
                     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(urlConn.getOutputStream()));
                     bw.write(_params.toString()); // 출력 스트림에 출력.
                     bw.flush(); // 출력 스트림을 플러시(비운다)하고 버퍼링 된 모든 출력 바이트를 강제 실행.
-                    Log.d("체크","bw.flush");
                     bw.close(); // 출력 스트림을 닫고 모든 시스템 자원을 해제.
                 }
 
