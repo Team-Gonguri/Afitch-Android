@@ -58,7 +58,7 @@ public class User_signUp extends AppCompatActivity {
                 id = edit_id.getText().toString();
                 pw = edit_pw.getText().toString();
                 nickName = edit_nickName.getText().toString();
-                signup_url = "http://3.36.65.27:8080/auth/sign-up?role=ROLE_ADMIN";
+                signup_url = "http://3.36.65.27:8080/auth/sign-up?role=ROLE_USER";
                 checkId_url = "http://3.36.65.27:8080/auth/id-duplicate?id=";
                 checkNickname_url = "http://3.36.65.27:8080/auth/nickname-duplicate?nickName=";
                 json_id = new JSONObject();

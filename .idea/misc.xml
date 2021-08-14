@@ -15,12 +15,9 @@
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/drawable/seekbar.xml" value="0.190625" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/drawable/seekbar_radius.xml" value="0.190625" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/drawable/seekbar_tumb.xml" value="0.190625" />
+        <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/abdominal_detail.xml" value="0.16302083333333334" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_arm_detail.xml" value="0.16458333333333333" />
-<<<<<<< HEAD
-        <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_date_video_diet.xml" value="0.16666666666666666" />
-=======
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_date_video_diet.xml" value="0.14666666666666667" />
->>>>>>> a22ac4cde1cc5bc46f455bc59e3a1362fc074db7
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_detail_leg.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_detail_stomach.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_diet_main.xml" value="0.1390625" />
@@ -40,9 +37,14 @@
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_user_sign_up.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_video_finish.xml" value="0.1390625" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/activity_video_preview.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/arm_detail.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/chest_detail.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/exercise_detail.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/leg_detail.xml" value="0.16302083333333334" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/network_security_config.xml" value="0.1" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/seekbar_tumb.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/seekbark_tumb.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/whole_detail.xml" value="0.16302083333333334" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/layout/wholebody_detail.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/qkrwl/AndroidStudioProjects/Afitch-Android/app/src/main/res/menu/bottombar.xml" value="0.1" />
       </map>

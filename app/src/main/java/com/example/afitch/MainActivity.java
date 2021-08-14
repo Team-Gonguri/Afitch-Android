@@ -2,11 +2,15 @@ package com.example.afitch;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sf;
     SharedPreferences.Editor editor;
     ArrayList<String> exerciseCategory;
+    Toast toast;
+    private onKeyBackPressedListener mOnKeyBackPressedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,8 +149,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (JSONException | MalformedURLException e) {
                         e.printStackTrace();
                     }
-                }
-                else{
+                } else {
                     Intent intent = new Intent(getApplicationContext(), User_login.class);
                     startActivity(intent);
                 }
@@ -171,15 +176,40 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    public interface onKeyBackPressedListener {
+        void onBackKey();
+    }
+
+    public void setOnKeyBackPressedListener(onKeyBackPressedListener listener) {
+        mOnKeyBackPressedListener = listener;
+    }
+
     private long time = 0;
+
     @Override
-    public void onBackPressed(){
-        if(System.currentTimeMillis() - time >= 2000){
-            time = System.currentTimeMillis();
-            Toast.makeText(this,"한번 더 누르면 종료합니다.", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            finish();
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+            Log.d("백키", "2");
+            if (System.currentTimeMillis() - time >= 2000) {
+                time = System.currentTimeMillis();
+                Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT);
+            } else {
+                finish();
+            }
+        } else {
+            Log.d("백키", "3");
+            super.onBackPressed();
         }
     }
+
+    // FragMainActivity 또는 Fragment 에서 Fragment로 전환할 때 사용
+    public void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_frame, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
 }
