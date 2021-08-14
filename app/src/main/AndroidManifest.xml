@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,10 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Afitch"
         android:usesCleartextTraffic="true">
-
-    <!--        <activity-->
-<!--            android:name=".User_settings_edit"-->
-<!--            android:exported="true" />-->
         <activity
             android:name=".Food_make"
             android:exported="true" />
@@ -36,27 +31,31 @@
             android:exported="true" />
         <activity
             android:name=".Video_preview"
-            android:exported="true" />
+            android:exported="true"></activity>
         <activity
             android:name=".User_signUp"
-            android:exported="true" />
-        <activity
-            android:name=".User_login"
-            android:exported="true" />
-        <activity
-            android:name=".Ranking_detail"
-            android:exported="true" />
-<!--        <activity-->
-<!--            android:name=".Ranking_main"-->
-<!--            android:exported="true" />-->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".User_login"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".Ranking_detail"
+            android:exported="true" />
+        <activity
+            android:name=".Ranking_main"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

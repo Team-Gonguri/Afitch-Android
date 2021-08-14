@@ -1,9 +1,5 @@
 package com.example.afitch;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,7 +61,7 @@ public class User_settings_edit extends Fragment {
                 }
 
                 // AsyncTask를 통해 HttpURLConnection 수행.
-                NetworkTask networkTask = new NetworkTask(url, values,"POST");
+                NetworkTask networkTask = new NetworkTask(url, "POST",true,values);
                 networkTask.execute();
 
 
@@ -103,7 +101,7 @@ public class User_settings_edit extends Fragment {
                         }
 
                         // AsyncTask를 통해 HttpURLConnection 수행.
-                        NetworkTask networkTask = new NetworkTask(url, values,"POST");
+                        NetworkTask networkTask = new NetworkTask(url, "POST",true,values);
                         networkTask.execute();
 
                     }
@@ -117,31 +115,33 @@ public class User_settings_edit extends Fragment {
 
     }
 
-    public static class NetworkTask extends AsyncTask<Void, Void, String> {
-        private String url;
+    public class NetworkTask extends AsyncTask<Void, Void, JSONObject> {
+        private String url, method;
         private JSONObject values;
-        private String type;
+        Boolean response;
 
-        public NetworkTask(String url, JSONObject values,String type) {
+        public NetworkTask(String url,String method, Boolean response, JSONObject values) {
             this.url = url;
+            this.method = method;
             this.values = values;
-            this.type = type;
+            this.response = response;
         }
 
         @Override
-        protected String doInBackground(Void... params) {
+        protected JSONObject doInBackground(Void... params) {
+            JSONObject result;
             Log.d("체크","doInBackground 진입");
-            String result; // 요청 결과를 저장할 변수.
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.request(url, values,type); // 해당 URL로 부터 결과물을 얻어온다.
+            result = requestHttpURLConnection.request(url, method, response, values,"Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYyODk1MjY4NSwiZXhwIjoxNjMxNTQ0Njg1fQ._P8S-wc1Ie7CINLSHXZaNH8ZK5GZ2b7yzO9tnN0t33Q"); // 해당 URL로 부터 결과물을 얻어온다.
+            Log.d("체크", "result : " + result);
             return result;
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
-
-        }
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
+//
+//        }
     }
 }
 

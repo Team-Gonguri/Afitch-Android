@@ -13,23 +13,29 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.fasterxml.jackson.core.JsonParser;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class Ranking_main extends Fragment {
 
-    TextView myranking,myscore;
+    TextView myranking, myscore;
     TextView[] view_nickname = new TextView[11];
     TextView[] view_score = new TextView[11];
     ImageButton[] gotoBtn = new ImageButton[11];
+    String exerciseid;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -77,58 +83,117 @@ public class Ranking_main extends Fragment {
         gotoBtn[10] = (ImageButton) view.findViewById(R.id.imageButton19);
 
 
-
         gotoBtn[1].setOnClickListener(new View.OnClickListener() {
-
             @Override
-            public void OnClick(View v){
+            public void onClick(View view) {
+                Log.d("hi", "btn click");
                 MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.onFragmentChanged(1);
+                mainActivity.onFragmentChanged(2);
+
             }
+        });
 
+        exerciseid = "3";
+        String url = "http://3.36.65.27:8080/exercises/" + exerciseid + "/participation/list?order=RANKING";
 
+        JSONObject ids = new JSONObject();
 
-
-        }
-
-
-
-
-            String exercise_num = "1";
-        String url = "http://3.36.65.27:8080/exercises/"+exercise_num+"/participation/list?order=RANKING";
-
-        JSONObject values = new JSONObject();
-
-        User_settings_edit.NetworkTask networkTask = new User_settings_edit.NetworkTask(url, values,"GET");
+        Ranking_main.NetworkTask networkTask = new Ranking_main.NetworkTask(url,"POST",true,ids);
         networkTask.execute();
 
-        try {
-
-            values.getJSONObject("list").getString("id");
-            Log.d("get","plzz");
-            System.out.println(values);
 
 
-        } catch (JSONException e) {
-            Log.d("Json","fail");
-            e.printStackTrace();
-        }
-
-        // AsyncTask를 통해 HttpURLConnection 수행.
-//        User_settings_edit.NetworkTask networkTask = new User_settings_edit.NetworkTask(url, values);
-//        networkTask.execute();
+    String idid = null;
+    System.out.println(ids);
 
 
 
-        for(int i=1;i<=10;i++){
-            view_nickname[i].setText("hihi"+i);//get nickname api//옵셔널 사용해야함 ??
-        }
+        //http connection  -> JsonObject -> setTex
 
 
         return view;
 
+    }
+
+    public class NetworkTask extends AsyncTask<Void, Void, JSONObject> {
+        private String url, method;
+        private JSONObject values;
+        Boolean response;
+
+        public NetworkTask(String url,String method, Boolean response, JSONObject values) {
+            this.url = url;
+            this.method = method;
+            this.values = values;
+            this.response = response;
+        }
+
+        @Override
+        protected JSONObject doInBackground(Void... params) {
+            JSONObject result;
+            Log.d("체크","doInBackground 진입");
+            RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
+            result = requestHttpURLConnection.request(url, method, response, values,"Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYyODk1MjY4NSwiZXhwIjoxNjMxNTQ0Njg1fQ._P8S-wc1Ie7CINLSHXZaNH8ZK5GZ2b7yzO9tnN0t33Q"); // 해당 URL로 부터 결과물을 얻어온다.
+            Log.d("access token ", "result : " + result);
+            return result;
+        }
+
+      @Override
+        protected void onPostExecute(JSONObject s) {
+            super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
+            System.out.println("!!!!"+s);
 
 
+            try {
+
+                String idid = s.getJSONObject("response").getJSONObject("lists").getJSONArray("useName").getJSONObject(0).getString("userName");
+
+
+
+//                JSONObject obj = new JSONObject(s);
+//
+//                JSONObject a = obj.getJSONObject("response");
+//////                String a = s.getJSONObject("response").toString();
+////
+////                System.out.println(a);
+//////                JSONArray b = a.getJSONArray("lists");
+//                JSONObject b = a.getJSONObject("lists");
+////                System.out.println("hihi");
+//
+//                JSONArray c = b.getJSONArray();
+//                System.out.println("hihi");
+
+
+//                try{
+//
+//                    JSONObject response = s.getJSONObject("response");
+//                    JSONArray lists = response.getJSONArray("lists");
+//
+//                    for(int i=0; i<lists.length(); i++)
+//                    {
+//                        JSONObject obj = lists.getJSONObject(i);
+//
+//                        String sibal = obj.getString("userName");
+//                        System.out.println(sibal);
+//
+//                    }
+//                }catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+
+
+
+
+//                for(int i=1;i<=10;i++){ //여기다 api 불러오기
+//                    Log.d("hi", "textview");
+//                    view_nickname[i].setText(idid);//get nickname api//옵셔널 사용해야함 ??
+//                }
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 
 }

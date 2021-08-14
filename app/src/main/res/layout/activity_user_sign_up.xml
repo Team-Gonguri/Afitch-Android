@@ -7,18 +7,18 @@
 
     <!-- a fitness coach -->
 
-    <TextView
-        android:id="@+id/a_fitch2"
-        android:layout_width="match_parent"
-        android:layout_height="79dp"
+
+    <ImageView
+        android:id="@+id/a_fitch"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="62dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/a_fitch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/logo"
         android:textAppearance="@style/a_fitch" />
-
 
     <TextView
         android:id="@+id/a_fitness_c"
@@ -32,45 +32,15 @@
         android:text="@string/a_fitness_c"
         android:textAppearance="@style/a_fitness_c" />
 
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="356dp"
-        android:background="@drawable/rectangle_1"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/user_age"
-            android:layout_width="65dp"
-            android:layout_height="42dp"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:hint="나이"
-            android:fontFamily="@font/notosans_light"
-            android:includeFontPadding="false"
-            android:textColorHint="#FFF"
-            android:textSize="13dp"
-            android:maxLength="2"/>/>
-
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="42dp"
-            android:text="세(만)"
-            android:textColor="#65FFFFFF"/>
-
-    </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="244dp"
         android:layout_height="42dp"
         android:layout_below="@+id/a_fitness_c"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="296dp"
         android:background="@drawable/rectangle_1">
 
         <ImageView
@@ -86,8 +56,39 @@
             android:layout_height="42dp"
             android:layout_marginLeft="10dp"
             android:background="@null"
-            android:hint="닉네임"
             android:fontFamily="@font/notosans_light"
+            android:hint="아이디"
+            android:includeFontPadding="false"
+            android:maxLength="12"
+            android:textColorHint="#FFF"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="244dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/a_fitness_c"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="416dp"
+        android:background="@drawable/rectangle_1">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_baseline_supervised_user_circle_24"></ImageView>
+
+        <EditText
+            android:id="@+id/signup_nickName"
+            android:layout_width="170dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:fontFamily="@font/notosans_light"
+            android:hint="닉네임"
             android:includeFontPadding="false"
             android:maxLength="12"
             android:textColorHint="#FFF"
@@ -100,7 +101,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="356dp"
         android:background="@drawable/rectangle_1">
 
         <ImageView
@@ -118,118 +119,15 @@
             android:layout_height="42dp"
             android:layout_marginLeft="10dp"
             android:background="@null"
-            android:hint="비밀번호"
             android:fontFamily="@font/notosans_light"
+            android:hint="비밀번호"
             android:includeFontPadding="false"
-            android:maxLength="12"
             android:inputType="textPassword"
+            android:maxLength="12"
             android:textColorHint="#FFF"
             android:textSize="13dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="416dp"
-        android:background="@drawable/rectangle_1">
-
-
-        <EditText
-            android:id="@+id/user_height"
-            android:layout_width="80dp"
-            android:layout_height="42dp"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:hint="키"
-            android:fontFamily="@font/notosans_light"
-            android:includeFontPadding="false"
-            android:maxLength="3"
-            android:textColorHint="#FFF"
-            android:textSize="13dp" />/>
-
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="42dp"
-            android:text="cm"
-            android:textColor="#65FFFFFF" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="416dp"
-        android:background="@drawable/rectangle_1">
-
-
-        <EditText
-            android:id="@+id/user_weight"
-            android:layout_width="80dp"
-            android:layout_height="42dp"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:hint="몸무게"
-            android:fontFamily="@font/notosans_light"
-            android:includeFontPadding="false"
-            android:maxLength="3"
-            android:textColorHint="#FFF"
-            android:textSize="13dp" />/>
-
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="42dp"
-            android:text="kg"
-            android:textColor="#65FFFFFF" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="356dp"
-        android:background="@drawable/rectangle_1">
-
-        <RadioGroup
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal"
-            android:checkedButton="@id/user_man">
-
-            <RadioButton
-                android:id="@+id/user_man"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/white"
-                android:text="남"
-                android:fontFamily="@font/notosans_light"
-                android:includeFontPadding="false"
-                android:textColor="#FFF"
-                android:textSize="13dp" />
-
-            <RadioButton
-                android:id="@+id/user_woman"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/white"
-                android:text="여"
-                android:fontFamily="@font/notosans_light"
-                android:includeFontPadding="false"
-                android:textColor="#FFF"
-                android:textSize="13dp" />
-        </RadioGroup>
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/signup_btn"

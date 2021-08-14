@@ -1,6 +1,5 @@
 package com.example.afitch;
 
-import static org.webrtc.ContextUtils.getApplicationContext;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +34,7 @@ public class User_settings extends Fragment {
         View view = inflater.inflate(R.layout.activity_user_settings,
                 container,
                 false);
-        //회원 정보 수정 버
+        //info edit btn
         TextView editBtn = (TextView) view.findViewById(R.id.editBtn);
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,13 +44,11 @@ public class User_settings extends Fragment {
 
             }
         });
-        //피드백 버튼
+        //feedback btn
         TextView feedbackBtn = (TextView) view.findViewById(R.id.feedbackBtn);
         feedbackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Log.d("feedback", "feedbackplz");
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("feedback");
@@ -62,11 +59,8 @@ public class User_settings extends Fragment {
             }
         });
 
-        return view;
-    }
-}
 
-        /*//로그아out 버튼
+        //로그아out 버튼
         TextView logoutBtn = (TextView) view.findViewById(R.id.logoutBtn);
         feedbackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,15 +75,15 @@ public class User_settings extends Fragment {
 
                         String url = "http://3.36.65.27:8080/auth";
                         JSONObject values = new JSONObject();
-                        try {
-                            System.out.println(values);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+//                        try {
+//                            System.out.println(values);
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
 
                         // AsyncTask를 통해 HttpURLConnection 수행.
-                        User_settings.NetworkTask networkTask = new User_settings.NetworkTask(url, values);
+                        User_settings.NetworkTask networkTask = new User_settings.NetworkTask(url,"POST",true,values);
                         networkTask.execute();
 
                     }
@@ -100,34 +94,38 @@ public class User_settings extends Fragment {
             }
         });
 
-
-
+        return view;
 
     }
-        public class NetworkTask extends AsyncTask<Void, Void, String> {
-            private String url;
-            private JSONObject values;
 
-            public NetworkTask(String url, JSONObject values) {
-                this.url = url;
-                this.values = values;
-            }
+    public class NetworkTask extends AsyncTask<Void, Void, JSONObject> {
+        private String url, method;
+        private JSONObject values;
+        Boolean response;
 
-            @Override
-            protected String doInBackground(Void... params) {
-                Log.d("체크","doInBackground 진입");
-                String result; // 요청 결과를 저장할 변수.
-                RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-                result = requestHttpURLConnection.request(url, values); // 해당 URL로 부터 결과물을 얻어온다.
-                return result;
-            }
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
-
-            }
+        public NetworkTask(String url,String method, Boolean response, JSONObject values) {
+            this.url = url;
+            this.method = method;
+            this.values = values;
+            this.response = response;
         }
-    }*/
 
+        @Override
+        protected JSONObject doInBackground(Void... params) {
+            JSONObject result;
+            Log.d("체크","doInBackground 진입");
+            RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
+            result = requestHttpURLConnection.request(url, method, response, values,"Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYyODk1MjY4NSwiZXhwIjoxNjMxNTQ0Njg1fQ._P8S-wc1Ie7CINLSHXZaNH8ZK5GZ2b7yzO9tnN0t33Q"); // 해당 URL로 부터 결과물을 얻어온다.
+            Log.d("체크", "result : " + result);
+            return result;
+        }
+
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s);
+//
+//        }
+
+    }
+}
 

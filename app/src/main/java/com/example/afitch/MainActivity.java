@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Date_Video_Diet()).commit();
                         break;
                     case R.id.fragment4:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Ranking_detail()).commit();//ranking view
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Ranking_main()).commit();//ranking view
                         break;
                 }
                 return true;
@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         if(index == 1){
             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,new User_settings()).commit();
         }
+        if(index == 2){
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,new Ranking_detail()).commit();
+        }
 
     }
+
 }
