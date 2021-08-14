@@ -50,6 +50,7 @@ public class Home_main extends Fragment implements View.OnClickListener{
                 Log.d("클릭","전신운동");
                 ((MainActivity)getActivity()).replaceFragment(new Whole_detail());
                 break;
+
             case R.id.arm_exercise:
                 Log.d("클릭","팔운동");
                 ((MainActivity)getActivity()).replaceFragment(new Arm_detail());

@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sf;
     SharedPreferences.Editor editor;
     ArrayList<String> exerciseCategory;
-    Toast toast;
-    private onKeyBackPressedListener mOnKeyBackPressedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         sf = getSharedPreferences("file", MODE_PRIVATE);
         accessToken = sf.getString("accessToken", "");
         refreshToken = sf.getString("refreshToken", "");
+        System.out.println(sf.getAll());
         if (accessToken != "")
             expr = Long.parseLong(sf.getString("accessExpr", ""));
 
@@ -139,10 +138,11 @@ public class MainActivity extends AppCompatActivity {
                             editor.commit();
 
                             // 재발급 요청
+                            Log.d("토큰 재발급","재발급요청하겠습니다.");
                             String url2 = "http://3.36.65.27:8080/auth/refresh/";
                             JSONObject refreshVal = new JSONObject();
                             refreshVal.put("refreshToken", refreshToken);
-                            NetworkTask nt = new NetworkTask(url2, "post", true, null, null, 2);
+                            NetworkTask nt = new NetworkTask(url2, "post", true, refreshVal, null, 2);
                             nt.execute();
 
                         }
@@ -175,14 +175,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-    }
-
-    public interface onKeyBackPressedListener {
-        void onBackKey();
-    }
-
-    public void setOnKeyBackPressedListener(onKeyBackPressedListener listener) {
-        mOnKeyBackPressedListener = listener;
     }
 
     private long time = 0;
