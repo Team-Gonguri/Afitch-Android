@@ -2,11 +2,15 @@ package com.example.afitch;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -31,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-
         // token 데이터 불러오기
         sf = getSharedPreferences("file", MODE_PRIVATE);
         accessToken = sf.getString("accessToken", "");
         refreshToken = sf.getString("refreshToken", "");
+        System.out.println(sf.getAll());
         if (accessToken != "")
             expr = Long.parseLong(sf.getString("accessExpr", ""));
 
@@ -123,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                                 //Adding each element of JSON array into ArrayList
                                 exerciseCategory.add((String) jsonArray.get(i));
                             }
-                            System.out.println("운동종류 " + exerciseCategory);
+                            System.out.println(exerciseCategory);
                         }
                         // 기존 token 정보 지우기 & accessToken 재발급 요청
                         else {
@@ -134,18 +138,18 @@ public class MainActivity extends AppCompatActivity {
                             editor.commit();
 
                             // 재발급 요청
+                            Log.d("토큰 재발급","재발급요청하겠습니다.");
                             String url2 = "http://3.36.65.27:8080/auth/refresh/";
                             JSONObject refreshVal = new JSONObject();
                             refreshVal.put("refreshToken", refreshToken);
-                            NetworkTask nt = new NetworkTask(url2, "post", true, null, null, 2);
+                            NetworkTask nt = new NetworkTask(url2, "post", true, refreshVal, null, 2);
                             nt.execute();
 
                         }
                     } catch (JSONException | MalformedURLException e) {
                         e.printStackTrace();
                     }
-                }
-                else{
+                } else {
                     Intent intent = new Intent(getApplicationContext(), User_login.class);
                     startActivity(intent);
                 }
@@ -172,15 +176,32 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     private long time = 0;
+
     @Override
-    public void onBackPressed(){
-        if(System.currentTimeMillis() - time >= 2000){
-            time = System.currentTimeMillis();
-            Toast.makeText(this,"한번 더 누르면 종료합니다.", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            finish();
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+            Log.d("백키", "2");
+            if (System.currentTimeMillis() - time >= 2000) {
+                time = System.currentTimeMillis();
+                Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT);
+            } else {
+                finish();
+            }
+        } else {
+            Log.d("백키", "3");
+            super.onBackPressed();
         }
     }
+
+    // FragMainActivity 또는 Fragment 에서 Fragment로 전환할 때 사용
+    public void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_frame, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
 }

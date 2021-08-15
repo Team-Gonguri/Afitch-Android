@@ -61,6 +61,8 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:onClick="onClick"
+                android:id="@+id/whole_exercise"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="20dp"
@@ -83,6 +85,8 @@
 
 
             <LinearLayout
+                android:onClick="onClick"
+                android:id="@+id/arm_exercise"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="20dp"
@@ -104,6 +108,8 @@
             </LinearLayout>
 
             <LinearLayout
+                android:onClick="onClick"
+                android:id="@+id/leg_exercise"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="20dp"
@@ -125,6 +131,8 @@
             </LinearLayout>
 
             <LinearLayout
+                android:onClick="onClick"
+                android:id="@+id/abdominal_exercise"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="20dp"
@@ -146,6 +154,8 @@
             </LinearLayout>
 
             <LinearLayout
+                android:onClick="onClick"
+                android:id="@+id/chest_exercise"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="20dp"

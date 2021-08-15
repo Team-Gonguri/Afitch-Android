@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home_main">
+
+    <TextView
+        android:id="@+id/some_id"
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/notosans_light"
+        android:includeFontPadding="false"
+        android:gravity="center_vertical"
+        android:text="어떤 복부 운동을\n하러오셨나요?"
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="187dp"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/notosans_medium"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="이번 달 목표 운동시간까지 "
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/notosans_bold"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="17:88:12"
+            android:textColor="#CCFF9595"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/some_id"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/haha"></ImageView>
+
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="스쿼트" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/haha"></ImageView>
+
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="스쿼트" />
+
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:src="@drawable/haha"
+                        android:scaleType="centerCrop">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:text="스쿼트"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:src="@drawable/haha"
+                        android:scaleType="centerCrop">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:text="스쿼트"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:src="@drawable/haha"
+                        android:scaleType="centerCrop">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:text="스쿼트"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:src="@drawable/haha"
+                        android:scaleType="centerCrop">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="20dp"
+                        android:text="스쿼트"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
