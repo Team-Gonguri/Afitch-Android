@@ -24,23 +24,23 @@
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-            android:gravity="center"
-            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
-            <View
-                android:id="@+id/percent_of_food"
-                android:layout_width="350dp"
-                android:layout_height="145dp"
-                android:background="@drawable/rectangle_4" />
+        <View
+            android:id="@+id/percent_of_food"
+            android:layout_width="350dp"
+            android:layout_height="145dp"
+            android:background="@drawable/rectangle_4" />
 
-            <ScrollView
-                android:id="@+id/main_scroll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <ScrollView
+            android:id="@+id/main_scroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -64,6 +64,7 @@
                     android:background="@drawable/rectangle_5" />
 
                 <ImageView
+                    android:id="@+id/image_breakfast"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="40dp"
@@ -81,6 +82,8 @@
                     android:fontFamily="@font/poppins_light"
                     android:textSize="20dp" />
 
+
+
                 <View
                     android:id="@+id/launch_back"
                     android:layout_width="160dp"
@@ -91,6 +94,7 @@
                     android:background="@drawable/rectangle_5" />
 
                 <ImageView
+                    android:id="@+id/image_lunch"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="210dp"
@@ -118,6 +122,7 @@
                     android:background="@drawable/rectangle_5" />
 
                 <ImageView
+                    android:id="@+id/image_dinner"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="40dp"
@@ -145,6 +150,7 @@
                     android:background="@drawable/rectangle_5" />
 
                 <ImageView
+                    android:id="@+id/image_snack"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="210dp"
@@ -163,12 +169,9 @@
                     android:fontFamily="@font/poppins_light" />
 
             </RelativeLayout>
-            </ScrollView>
+        </ScrollView>
 
 
-        </LinearLayout>
-
-
-
+    </LinearLayout>
 
 </RelativeLayout>
