@@ -16,12 +16,13 @@
             android:layout_height="match_parent">
         </VideoView>
 
-        <TextureView
-            android:id="@+id/recordView"
-            android:layout_gravity="end"
+        <com.example.afitch.AutoFitTextureView
+            android:id="@+id/recordVideo"
             android:layout_width="150dp"
-            android:layout_height="200dp">
-        </TextureView>
+            android:layout_height="200dp"
+            android:layout_gravity="end">
+
+        </com.example.afitch.AutoFitTextureView>
 
     </FrameLayout>
 

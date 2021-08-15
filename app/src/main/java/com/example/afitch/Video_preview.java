@@ -34,12 +34,7 @@ public class Video_preview extends AppCompatActivity {
 
         videoView = (VideoView) findViewById(R.id.videoView);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
-//        MediaController mc = new MediaController(this);
-        // Get controls
         getControls();
-//        videoView.setMediaController(mc);
-//        mc.setAnchorView(videoView);
-        // Prepare video for VideoView
         prepareVideoViewVideo();
 
     }
