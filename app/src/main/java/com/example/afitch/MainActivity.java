@@ -204,4 +204,16 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+
+    public void onFragmentChanged(int index) {
+        if(index == 0){
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,new User_settings_edit()).commit();
+        }
+        if(index == 1){
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,new User_settings()).commit();
+        }
+        if(index == 2){
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,new Ranking_detail()).commit();
+        }
+    }
 }
