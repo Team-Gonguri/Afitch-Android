@@ -16,8 +16,12 @@ import android.widget.TextView;
 import com.fasterxml.jackson.core.JsonParser;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.json.JSONException;
 import org.json.JSONObject;
+//import org.json.simple.JSONObject;
+//import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.ParseException;
 
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -98,14 +102,12 @@ public class Ranking_main extends Fragment {
 
         JSONObject ids = new JSONObject();
 
-        Ranking_main.NetworkTask networkTask = new Ranking_main.NetworkTask(url,"POST",true,ids);
+        Ranking_main.NetworkTask networkTask = new Ranking_main.NetworkTask(url, "POST", true, ids);
         networkTask.execute();
 
 
-
-    String idid = null;
-    System.out.println(ids);
-
+        String idid = null;
+        System.out.println(ids);
 
 
         //http connection  -> JsonObject -> setTex
@@ -120,7 +122,7 @@ public class Ranking_main extends Fragment {
         private JSONObject values;
         Boolean response;
 
-        public NetworkTask(String url,String method, Boolean response, JSONObject values) {
+        public NetworkTask(String url, String method, Boolean response, JSONObject values) {
             this.url = url;
             this.method = method;
             this.values = values;
@@ -130,24 +132,44 @@ public class Ranking_main extends Fragment {
         @Override
         protected JSONObject doInBackground(Void... params) {
             JSONObject result;
-            Log.d("체크","doInBackground 진입");
+            Log.d("체크", "doInBackground 진입");
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.request(url, method, response, values,"Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYyODk1MjY4NSwiZXhwIjoxNjMxNTQ0Njg1fQ._P8S-wc1Ie7CINLSHXZaNH8ZK5GZ2b7yzO9tnN0t33Q"); // 해당 URL로 부터 결과물을 얻어온다.
+            result = requestHttpURLConnection.request(url, method, response, values, "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYyODk1MjY4NSwiZXhwIjoxNjMxNTQ0Njg1fQ._P8S-wc1Ie7CINLSHXZaNH8ZK5GZ2b7yzO9tnN0t33Q"); // 해당 URL로 부터 결과물을 얻어온다.
             Log.d("access token ", "result : " + result);
             return result;
         }
 
-      @Override
+        //      @Override
         protected void onPostExecute(JSONObject s) {
             super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
-            System.out.println("!!!!"+s);
-
+            System.out.println("!!!!" + s);
+            System.out.println(s.getClass().getName());
 
             try {
+                if (s.getString("status_code").equals("200")) {
+                    String response = s.getString("response");
 
-                String idid = s.getJSONObject("response").getJSONObject("lists").getJSONArray("useName").getJSONObject(0).getString("userName");
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray lists = jsonObject.getJSONArray("lists");
+
+                    for (int i = 0; i < lists.length(); i++) {
+                        JSONObject obj = lists.getJSONObject(i);
+                        String name = obj.getString("userName");
+                        try {
+                            view_nickname[i+1].setText(name);//get nickname api//옵셔널 사용해야함 ??
+                        }catch (NullPointerException e){
+
+                        }
+
+                        System.out.println("name(" + i + "): " + name);
+                        System.out.println();
+                    }
+
+                }
 
 
+//
+//          try {
 
 //                JSONObject obj = new JSONObject(s);
 //
@@ -181,20 +203,23 @@ public class Ranking_main extends Fragment {
 //                }
 
 
-
-
 //                for(int i=1;i<=10;i++){ //여기다 api 불러오기
 //                    Log.d("hi", "textview");
 //                    view_nickname[i].setText(idid);//get nickname api//옵셔널 사용해야함 ??
 //                }
 
 
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }
     }
-
 }
+
+
+
 
