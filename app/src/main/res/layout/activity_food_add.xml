@@ -8,19 +8,39 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="58dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/logo" />
+
+    <Button
+        android:id="@+id/enter_make_food"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rectangle_6"
+        android:fontFamily="@font/notosans_bold"
+        android:text="음식 추가"
+        android:textColor="#ffffff" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="90dp"
         android:text="식단 등록"
         android:textColor="#ffffff"
         android:textSize="30dp"
         android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/image_barcode"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/barcode" />
 
 
     <LinearLayout
@@ -35,24 +55,41 @@
             android:layout_height="wrap_content">
 
             <View
-                android:id="@+id/search_food"
+                android:id="@+id/search_food_back"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:background="@drawable/rectangle_6" />
 
             <ImageView
+                android:id="@+id/search_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/search_icon" />
 
-            <ImageView
-                android:layout_width="40dp"
+            <EditText
+                android:id="@+id/search_food"
+                android:layout_width="210dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="60dp"
+                android:background="@null"
+                android:fontFamily="@font/notosans_bold"
+                android:hint="음식명을 입력하시오."
+                android:maxLength="30"
+                android:textColorHint="#FFFFFF"
+                android:textSize="23dp" />
+
+            <Button
+                android:id="@+id/search_food_btn"
+                android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="300dp"
+                android:layout_marginStart="280dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/barcode" />
+                android:background="@drawable/rectangle_4"
+                android:fontFamily="@font/notosans_bold"
+                android:text="검색"
+                android:textColor="#000000" />
 
         </RelativeLayout>
 
@@ -80,21 +117,20 @@
                         android:background="@drawable/rectangle_4" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/text_food_1"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="30dp"
-                        android:text="떡볶이"
                         android:textColor="#000000"
-                        android:textSize="30dp"
-                        />
+                        android:textSize="20dp" />
 
                     <TextView
+                        android:id="@+id/calories_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="60dp"
-                        android:text="280kacl/200g"
                         android:textColor="#000000"
                         android:textSize="20dp" />
 
@@ -105,6 +141,7 @@
                         android:layout_marginStart="220dp" />
 
                     <ImageView
+                        android:id="@+id/add_food1"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="300dp"
@@ -124,13 +161,13 @@
                         android:background="@drawable/rectangle_4" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/text_food_2"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="30dp"
-                        android:text="떡볶이"
                         android:textColor="#000000"
-                        android:textSize="30dp" />
+                        android:textSize="20dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -148,6 +185,7 @@
                         android:layout_marginStart="220dp" />
 
                     <ImageView
+                        android:id="@+id/add_food2"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="300dp"
@@ -167,13 +205,13 @@
                         android:background="@drawable/rectangle_4" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/text_food_3"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="30dp"
-                        android:text="떡볶이"
                         android:textColor="#000000"
-                        android:textSize="30dp" />
+                        android:textSize="20dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -191,6 +229,7 @@
                         android:layout_marginStart="220dp" />
 
                     <ImageView
+                        android:id="@+id/add_food3"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="300dp"
@@ -210,13 +249,13 @@
                         android:background="@drawable/rectangle_4" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/text_food_4"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="30dp"
-                        android:text="떡볶이"
                         android:textColor="#000000"
-                        android:textSize="30dp" />
+                        android:textSize="20dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -234,6 +273,271 @@
                         android:layout_marginStart="220dp" />
 
                     <ImageView
+                        android:id="@+id/add_food4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_5"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:id="@+id/text_food_5"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:id="@+id/add_food5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_6"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:id="@+id/text_food_6"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:id="@+id/add_food6"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_7"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:id="@+id/text_food_7"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:id="@+id/add_food7"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_8"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:id="@+id/text_food_8"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:id="@+id/add_food8"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_9"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:id="@+id/text_food_9"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:id="@+id/add_food9"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/plus_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <View
+                        android:id="@+id/add_10"
+                        android:layout_width="350dp"
+                        android:layout_height="110dp"
+                        android:background="@drawable/rectangle_4" />
+
+                    <TextView
+                        android:id="@+id/text_food_10"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:text="280kacl/200g"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <NumberPicker
+                        android:id="@+id/picker10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="220dp" />
+
+                    <ImageView
+                        android:id="@+id/add_food10"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="300dp"
@@ -244,6 +548,8 @@
 
             </LinearLayout>
         </ScrollView>
+
+
 
 
 

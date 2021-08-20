@@ -81,7 +81,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/withdays"
+            android:id="@+id/ttiillee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosans_thin"

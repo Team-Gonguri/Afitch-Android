@@ -1,23 +1,44 @@
 package com.example.afitch;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Ranking_detail extends Fragment {
+public class Ranking_detail extends Fragment  {
 
-    TextView[] comment = new TextView[3];
-    TextView[] participation = new TextView[3];
-    TextView commentAddBtn;
+    TextView[] comment = new TextView[10];
+    TextView[] participation = new TextView[10];
+    TextView commentid,exerciseKind,commentNum;
+    EditText addcomments;
+    Button addcommentsBtn;
+    ImageView detailLogo;
+    String videourl,accessToken;
+    VideoView videoView;
+    int pageId;
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,44 +52,70 @@ public class Ranking_detail extends Fragment {
                 container,
                 false);
 
-        comment[0] = (TextView) view.findViewById(R.id.commentAdd1);
-        comment[1] = (TextView) view.findViewById(R.id.commentAdd1);
-        comment[2] = (TextView) view.findViewById(R.id.commentAdd3);
+        SharedPreferences sp = this.getActivity().getSharedPreferences("file", MODE_PRIVATE);
+        accessToken = sp.getString("accessToken",null);
 
-        participation[0] = (TextView) view.findViewById(R.id.participationId1);
-        participation[1] = (TextView) view.findViewById(R.id.participationId2);
-        participation[2] = (TextView) view.findViewById(R.id.participationId3);
+        SharedPreferences page = this.getActivity().getSharedPreferences("page", MODE_PRIVATE);
+        pageId = page.getInt("page",0);
 
-        commentAddBtn = view.findViewById(R.id.addComment);
+        commentid = (TextView) view.findViewById(R.id.commentid);
+        exerciseKind = (TextView) view.findViewById(R.id.exerciseKind);
+        commentNum = (TextView) view.findViewById(R.id.commentNum);
 
-        String exercise_num = "3";//화면전환시 바뀜 api 받아오기
-        String url = "http://3.36.65.27:8080/exercises/1/participation/exericse_num/comment?authorities=ROLE_USER&id=" + exercise_num;
+        videoView = (VideoView) view.findViewById(R.id.videoView2);
 
+        comment[0] = (TextView) view.findViewById(R.id.commentAdd2);
+        comment[1] = (TextView) view.findViewById(R.id.commentAdd3);
+        comment[2] = (TextView) view.findViewById(R.id.commentAdd4);
+        comment[3] = (TextView) view.findViewById(R.id.commentAdd5);
+        comment[4] = (TextView) view.findViewById(R.id.commentAdd6);
+        comment[5] = (TextView) view.findViewById(R.id.commentAdd7);
+        comment[6] = (TextView) view.findViewById(R.id.commentAdd8);
+        comment[7] = (TextView) view.findViewById(R.id.commentAdd9);
+        comment[8] = (TextView) view.findViewById(R.id.commentAdd10);
+        comment[9] = (TextView) view.findViewById(R.id.commentAdd11);
+
+
+        participation[0] = (TextView) view.findViewById(R.id.participationId3);
+        participation[1] = (TextView) view.findViewById(R.id.participationId3);
+        participation[2] = (TextView) view.findViewById(R.id.participationId4);
+        participation[3] = (TextView) view.findViewById(R.id.participationId5);
+        participation[4] = (TextView) view.findViewById(R.id.participationId6);
+        participation[5] = (TextView) view.findViewById(R.id.participationId7);
+        participation[6] = (TextView) view.findViewById(R.id.participationId8);
+        participation[7] = (TextView) view.findViewById(R.id.participationId9);
+        participation[8] = (TextView) view.findViewById(R.id.participationId10);
+        participation[9] = (TextView) view.findViewById(R.id.participation11);
+
+        //input comments
+        String addcommenturl = "http://3.36.65.27:8080/exercises/3/participation/1/comment?authorities=ROLE_USER";
+        JSONObject comments = new JSONObject();
+        addcomments = (EditText) view.findViewById(R.id.addcomments);
+        addcommentsBtn = view.findViewById(R.id.addcommentsBtn);
+        addcommentsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    comments.put("text", addcomments);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                NetworkTask networkTask = new NetworkTask(addcommenturl, "post", true, comments, 3);
+                networkTask.execute();
+
+            }
+        });
+
+        detailLogo = (ImageView) view.findViewById(R.id.detailLogo);
+
+
+        String exercise_num = "3";//화면전환시 바뀜 api 받아오기 = pageId;
+        String url = "http://3.36.65.27:8080/exercises/3/participation/1?authorities=ROLE_USER";
         JSONObject values = new JSONObject();
 
-        try {
-
-            values.getJSONObject("nickname");
-            values.getJSONObject("text");
-
-            Log.d("post", "plzz");
-            System.out.println(values);
-
-
-        } catch (JSONException e) {
-            Log.d("Json", "fail");
-            e.printStackTrace();
-        }
-
-//         AsyncTask를 통해 HttpURLConnection 수행.
-        Ranking_detail.NetworkTask networkTask = new Ranking_detail.NetworkTask(url, "GET", true, values);
+        Ranking_detail.NetworkTask networkTask = new Ranking_detail.NetworkTask(url, "get", true, values,1);
         networkTask.execute();
 
-//
-        for(int i=0;i<3;i++){
-            participation[i].setText("hihi"+i);//get nickname api//옵셔널 사용해야함 ??
-            comment[i].setText("bebe"+i);
-        }
 
         return view;
     }
@@ -76,13 +123,15 @@ public class Ranking_detail extends Fragment {
     public class NetworkTask extends AsyncTask<Void, Void, JSONObject> {
         private String url, method;
         private JSONObject values;
+        private int num;
         Boolean response;
 
-        public NetworkTask(String url, String method, Boolean response, JSONObject values) {
+        public NetworkTask(String url, String method, Boolean response, JSONObject values,int num) {
             this.url = url;
             this.method = method;
             this.values = values;
             this.response = response;
+            this.num = num;
         }
 
         @Override
@@ -90,16 +139,98 @@ public class Ranking_detail extends Fragment {
             JSONObject result;
             Log.d("체크", "doInBackground 진입");
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.request(url, method, response, values,"Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYyODk1MjY4NSwiZXhwIjoxNjMxNTQ0Njg1fQ._P8S-wc1Ie7CINLSHXZaNH8ZK5GZ2b7yzO9tnN0t33Q"); // 해당 URL로 부터 결과물을 얻어온다.
+            result = requestHttpURLConnection.request(url, method, response, values,"Bearer "+accessToken); // 해당 URL로 부터 결과물을 얻어온다.
             Log.d("체크", "result : " + result);
             return result;
         }
-//        @Override
-//        protected void onPostExecute(String s) {
-//            super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
-//
-//        }
-//    }
+        @Override
+        protected void onPostExecute(JSONObject s) {
+            Log.d("tag", "hello case onPostExecute");
+
+
+            super.onPostExecute(s);
+            try {
+
+                if (s.getString("status_code").equals("200")) {
+
+
+                    switch (num) {
+                        case 1:
+                            Log.d("tag", "hello case 1");
+
+                            String response = s.getString("response");
+
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONArray lists = jsonObject.getJSONArray("comments");
+                            String exerciseName = jsonObject.getString("exerciseName");
+                            String userName = jsonObject.getString("nickName");
+                            int commentnum = jsonObject.getInt("commentNum");
+                            videourl = jsonObject.getString("url");
+
+                            //url + accesstoken
+                            JSONObject v = new JSONObject();
+                            NetworkTask networkTask = new NetworkTask(videourl, "get", true, v, 2);
+                            networkTask.execute();
+
+                            commentid.setText(userName);
+                            commentNum.setText(Integer.toString(commentnum));
+                            exerciseKind.setText(exerciseName);
+
+
+                            for (int i = 0; i < 10; i++) {
+                                JSONObject obj = lists.getJSONObject(i);
+                                String name = obj.getString("nickName");
+                                String text = obj.getString("text");
+                                try {
+                                    participation[i].setText(name + " : ");
+                                    comment[i].setText(text);
+                                } catch (NullPointerException e) {
+
+                                }
+
+                            }
+
+                            break;
+
+                        case 2:
+
+                            Log.d("tag", "hello case 2");
+                            System.out.println(s);
+
+                            videoView.setMediaController(new MediaController(getActivity()));
+                            videoView.setVideoURI(Uri.parse(videourl));
+
+                            videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                                @Override
+                                public void onPrepared(MediaPlayer mp) {
+                                    videoView.start();
+                                }
+
+                            });
+
+                            break;
+
+                        case 3:
+                            Log.d("tag", "hello case 3");
+
+                            try {
+                                if (s.getString("status_code").equals("200")) {
+                                    Log.d("tag", "add ok");
+                                }
+                            } catch (JSONException k) {
+                                k.printStackTrace();
+                            }
+                            break;
+
+
+                    }
+                }
+            }catch(JSONException e) {
+                e.printStackTrace();
+            }
+
+
+        }
 
     }
 }

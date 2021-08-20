@@ -1,6 +1,9 @@
 package com.example.afitch;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
@@ -18,8 +22,11 @@ import org.json.JSONObject;
 
 public class User_settings_edit extends Fragment {
     public Button gotoSave;
-    public EditText weightEdit,heightEdit,yearEdit;
-    String weight,height,year;
+    public EditText weightEdit, heightEdit, yearEdit;
+    public TextView settingsId;
+    String weight, height, accessToken;
+    JSONObject name = new JSONObject();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,10 +41,21 @@ public class User_settings_edit extends Fragment {
         View view = inflater.inflate(R.layout.activity_user_settings_edit,
                 container,
                 false);
+        //accessToken
+        SharedPreferences sp = this.getActivity().getSharedPreferences("file", MODE_PRIVATE);
+        accessToken = sp.getString("accessToken",null);
 
+
+        //id loading
+        settingsId = (TextView) view.findViewById(R.id.settingsId);
+        String url = "http://3.36.65.27:8080/user?authorities=ROLE_USER";
+
+        User_settings_edit.NetworkTask networkTask = new User_settings_edit.NetworkTask(url,"get",true,name,3);
+        networkTask.execute();
+
+        //edit height weight
         weightEdit = (EditText) view.findViewById(R.id.weightEdit);
         heightEdit = (EditText) view.findViewById(R.id.weightEdit);
-        yearEdit = (EditText) view.findViewById(R.id.weightEdit);
 
         gotoSave = (Button) view.findViewById(R.id.gotoSave);
 
@@ -46,24 +64,21 @@ public class User_settings_edit extends Fragment {
             public void onClick(View v) {
                 weight = weightEdit.getText().toString();
                 height = heightEdit.getText().toString();
-                year = yearEdit.getText().toString();
 
-                String url = "http://3.36.65.27:8080/user";
-                JSONObject values = new JSONObject();
+                String url = "http://3.36.65.27:8080/user?authorities=ROLE_USER";
+                JSONObject edit = new JSONObject();
                 try {
-                    values.put("height",height);
-                    values.put("weight",weight);
+                    edit.put("height", height);
+                    edit.put("weight", weight);
 
-                    System.out.println(values);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
                 // AsyncTask를 통해 HttpURLConnection 수행.
-                NetworkTask networkTask = new NetworkTask(url, "POST",true,values);
+                NetworkTask networkTask = new NetworkTask(url, "post", true, edit, 1); //height weight change
                 networkTask.execute();
-
 
                 //화면 전환
                 MainActivity mainActivity = (MainActivity) getActivity();
@@ -71,12 +86,12 @@ public class User_settings_edit extends Fragment {
             }
         });
 
-        //닉네임 바꾸기
+        //edit nickname
         Button nicknameBtn = (Button) view.findViewById(R.id.nicknameBtn);
         final EditText nicknameEdit = new EditText(getContext());
-        nicknameBtn.setOnClickListener(new View.OnClickListener(){
+        nicknameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("change nickname");
@@ -89,19 +104,19 @@ public class User_settings_edit extends Fragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String value = nicknameEdit.getText().toString();
 
-                        String url = "http://3.36.65.27:8080/user";
-                        JSONObject values = new JSONObject();
+                        String url = "http://3.36.65.27:8080/user?authorities=ROLE_USER";
+                        JSONObject changename = new JSONObject();
                         try {
-                            values.put("nickname",value);
 
-                            System.out.println(values);
+                            changename.put("nickName", value);
+                            System.out.println(changename);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
                         // AsyncTask를 통해 HttpURLConnection 수행.
-                        NetworkTask networkTask = new NetworkTask(url, "POST",true,values);
+                        NetworkTask networkTask = new NetworkTask(url, "put", true, changename, 2); //edit name
                         networkTask.execute();
 
                     }
@@ -119,32 +134,73 @@ public class User_settings_edit extends Fragment {
         private String url, method;
         private JSONObject values;
         Boolean response;
+        private int num;
 
-        public NetworkTask(String url,String method, Boolean response, JSONObject values) {
+
+        public NetworkTask(String url, String method, Boolean response, JSONObject values, int num) {
             this.url = url;
             this.method = method;
             this.values = values;
             this.response = response;
+            this.num = num;
         }
 
         @Override
         protected JSONObject doInBackground(Void... params) {
             JSONObject result;
-            Log.d("체크","doInBackground 진입");
+            Log.d("체크", "doInBackground 진입");
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.request(url, method, response, values,"Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYyODk1MjY4NSwiZXhwIjoxNjMxNTQ0Njg1fQ._P8S-wc1Ie7CINLSHXZaNH8ZK5GZ2b7yzO9tnN0t33Q"); // 해당 URL로 부터 결과물을 얻어온다.
+            result = requestHttpURLConnection.request(url, method, response, values, "Bearer "+accessToken); // 해당 URL로 부터 결과물을 얻어온다.
             Log.d("체크", "result : " + result);
             return result;
         }
 
-//        @Override
-//        protected void onPostExecute(String s) {
-//            super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
-//
-//        }
+        @Override
+        protected void onPostExecute(JSONObject s) {
+            super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
+
+            switch (num) {
+                case 1:
+
+                case 2:
+                    try {
+                        if (s.getString("status_code").equals("200")) {
+                            System.out.println(s);
+                            Log.d("t", "edit success");
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 3:
+                    try {
+                        if (s.getString("status_code").equals("200")) {
+
+                            String response = s.getString("response");
+                            JSONObject jsonObject = new JSONObject(response);
+                            String nickname = jsonObject.getString("nickName");
+                            int hintheight = jsonObject.getInt("height");
+                            int hintweight = jsonObject.getInt("weight");
+                            System.out.println(hintheight + " " +hintweight);
+
+
+                            settingsId.setText(nickname);
+                            heightEdit.setHint(Integer.toString(hintheight));
+                            weightEdit.setHint(Integer.toString(hintweight));
+
+
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+
+            }
+        }
     }
 }
-
-
 
 

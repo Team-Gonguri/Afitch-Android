@@ -1,10 +1,14 @@
 package com.example.afitch;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import androidx.fragment.app.Fragment;
+import android.content.SharedPreferences;
 
 import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.fasterxml.jackson.core.JsonParser;
 
@@ -32,7 +37,8 @@ public class Ranking_main extends Fragment {
     TextView[] view_nickname = new TextView[11];
     TextView[] view_score = new TextView[11];
     ImageButton[] gotoBtn = new ImageButton[11];
-    String exerciseid;
+    String exerciseid,accessToken;
+    int pageId;
 
 
     @Override
@@ -49,6 +55,10 @@ public class Ranking_main extends Fragment {
 
         myranking = (TextView) view.findViewById(R.id.myranking);
         myscore = (TextView) view.findViewById(R.id.myscore);
+
+        SharedPreferences sp = this.getActivity().getSharedPreferences("file", MODE_PRIVATE);
+        accessToken = sp.getString("accessToken",null);
+
 
         //nickname TextView
         view_nickname[1] = (TextView) view.findViewById(R.id.view_nickname1);
@@ -87,17 +97,22 @@ public class Ranking_main extends Fragment {
         gotoBtn[10] = (ImageButton) view.findViewById(R.id.imageButton19);
 
 
-        gotoBtn[1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("hi", "btn click");
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.onFragmentChanged(2);
+        for(int i=1;i<11;i++) {
+            int finalI = i;
+            gotoBtn[i].setOnClickListener(new View.OnClickListener() {
+                int pagenum = finalI;
+                public void onClick(View view) {
+                    Log.d("hi", "btn click");
+                    pageId = pagenum;
+                    storeInFile();
+                    MainActivity mainActivity = (MainActivity) getActivity();
+                    mainActivity.onFragmentChanged(2);
 
-            }
-        });
+                }
+            });
+        }
 
-        exerciseid = "3";
+        exerciseid = "3";   //전단계와 연결
         String url = "http://3.36.65.27:8080/exercises/" + exerciseid + "/participation/list?order=RANKING";
 
         JSONObject ids = new JSONObject();
@@ -106,21 +121,35 @@ public class Ranking_main extends Fragment {
         networkTask.execute();
 
 
-        String idid = null;
-        System.out.println(ids);
 
-
-        //http connection  -> JsonObject -> setTex
+        //http connection  -> JsonObject -> setText
 
 
         return view;
 
     }
 
+    public void storeInFile(){
+
+        //앱이 종료되도 데이터를 사용할 수 있게 함
+
+        SharedPreferences page = this.getActivity().getSharedPreferences("page", MODE_PRIVATE);
+
+        //저장을 하기위해 editor를 이용하여 값을 저장시켜준다.
+        SharedPreferences.Editor editor = page.edit();
+        //token 저장
+        editor.putInt("page",pageId);
+
+        //최종 커밋
+        editor.commit();
+    }
+
     public class NetworkTask extends AsyncTask<Void, Void, JSONObject> {
         private String url, method;
         private JSONObject values;
         Boolean response;
+
+
 
         public NetworkTask(String url, String method, Boolean response, JSONObject values) {
             this.url = url;
@@ -131,13 +160,17 @@ public class Ranking_main extends Fragment {
 
         @Override
         protected JSONObject doInBackground(Void... params) {
+
+
             JSONObject result;
             Log.d("체크", "doInBackground 진입");
             RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.request(url, method, response, values, "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTYyODk1MjY4NSwiZXhwIjoxNjMxNTQ0Njg1fQ._P8S-wc1Ie7CINLSHXZaNH8ZK5GZ2b7yzO9tnN0t33Q"); // 해당 URL로 부터 결과물을 얻어온다.
+            result = requestHttpURLConnection.request(url, method, response, values, "Bearer "+accessToken); // 해당 URL로 부터 결과물을 얻어온다.
             Log.d("access token ", "result : " + result);
             return result;
         }
+
+
 
         //      @Override
         protected void onPostExecute(JSONObject s) {
@@ -155,8 +188,10 @@ public class Ranking_main extends Fragment {
                     for (int i = 0; i < lists.length(); i++) {
                         JSONObject obj = lists.getJSONObject(i);
                         String name = obj.getString("userName");
+                        int score = obj.getInt("score");
                         try {
                             view_nickname[i+1].setText(name);//get nickname api//옵셔널 사용해야함 ??
+                            view_score[i+1].setText(Integer.toString(score));
                         }catch (NullPointerException e){
 
                         }
@@ -166,6 +201,15 @@ public class Ranking_main extends Fragment {
                     }
 
                 }
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
 
 
 //
@@ -212,14 +256,5 @@ public class Ranking_main extends Fragment {
 //            } catch (JSONException e) {
 //                e.printStackTrace();
 //            }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
-
-
 
 
