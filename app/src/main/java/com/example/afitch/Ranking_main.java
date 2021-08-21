@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.fasterxml.jackson.core.JsonParser;
@@ -33,13 +34,14 @@ import java.util.concurrent.ExecutionException;
 
 public class Ranking_main extends Fragment {
 
+    private static Toast toast;
     TextView myranking, myscore;
     TextView[] view_nickname = new TextView[11];
     TextView[] view_score = new TextView[11];
     ImageButton[] gotoBtn = new ImageButton[11];
-    String exerciseid,accessToken;
+    String exerciseid,accessToken,mynickname;
+    String [] scope = new String[10];
     int pageId;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,12 +55,18 @@ public class Ranking_main extends Fragment {
                 container,
                 false);
 
+        JSONObject info = new JSONObject();
+        String idurl = "http://3.36.65.27:8080/user?authorities=ROLE_USER";
+
+        Ranking_main.NetworkTask networkTask = new Ranking_main.NetworkTask(idurl,"get",true,info,0);
+        networkTask.execute();
+
+
         myranking = (TextView) view.findViewById(R.id.myranking);
         myscore = (TextView) view.findViewById(R.id.myscore);
 
         SharedPreferences sp = this.getActivity().getSharedPreferences("file", MODE_PRIVATE);
         accessToken = sp.getString("accessToken",null);
-
 
         //nickname TextView
         view_nickname[1] = (TextView) view.findViewById(R.id.view_nickname1);
@@ -102,12 +110,10 @@ public class Ranking_main extends Fragment {
             gotoBtn[i].setOnClickListener(new View.OnClickListener() {
                 int pagenum = finalI;
                 public void onClick(View view) {
-                    Log.d("hi", "btn click");
-                    pageId = pagenum;
+                    pageId = pagenum;//participation num
                     storeInFile();
                     MainActivity mainActivity = (MainActivity) getActivity();
                     mainActivity.onFragmentChanged(2);
-
                 }
             });
         }
@@ -117,12 +123,13 @@ public class Ranking_main extends Fragment {
 
         JSONObject ids = new JSONObject();
 
-        Ranking_main.NetworkTask networkTask = new Ranking_main.NetworkTask(url, "POST", true, ids);
-        networkTask.execute();
-
+        Ranking_main.NetworkTask nT = new Ranking_main.NetworkTask(url, "POST", true, ids,1);
+        nT.execute();
 
 
         //http connection  -> JsonObject -> setText
+
+        toast = Toast.makeText(getActivity(),"영상을 공개하지 않은 사용자 입니다.", Toast.LENGTH_SHORT);
 
 
         return view;
@@ -148,14 +155,15 @@ public class Ranking_main extends Fragment {
         private String url, method;
         private JSONObject values;
         Boolean response;
+        private int num;
 
 
-
-        public NetworkTask(String url, String method, Boolean response, JSONObject values) {
+        public NetworkTask(String url, String method, Boolean response, JSONObject values,int num) {
             this.url = url;
             this.method = method;
             this.values = values;
             this.response = response;
+            this.num = num;
         }
 
         @Override
@@ -175,37 +183,80 @@ public class Ranking_main extends Fragment {
         //      @Override
         protected void onPostExecute(JSONObject s) {
             super.onPostExecute(s); //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
-            System.out.println("!!!!" + s);
-            System.out.println(s.getClass().getName());
 
-            try {
-                if (s.getString("status_code").equals("200")) {
-                    String response = s.getString("response");
 
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONArray lists = jsonObject.getJSONArray("lists");
+            switch (num){
+                case 0:
 
-                    for (int i = 0; i < lists.length(); i++) {
-                        JSONObject obj = lists.getJSONObject(i);
-                        String name = obj.getString("userName");
-                        int score = obj.getInt("score");
-                        try {
-                            view_nickname[i+1].setText(name);//get nickname api//옵셔널 사용해야함 ??
-                            view_score[i+1].setText(Integer.toString(score));
-                        }catch (NullPointerException e){
+                    try {
+                        if (s.getString("status_code").equals("200")) {
+
+                            String response = s.getString("response");
+                            JSONObject jsonObject = new JSONObject(response);
+                            mynickname = jsonObject.getString("nickName");
 
                         }
 
-                        System.out.println("name(" + i + "): " + name);
-                        System.out.println();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case 1:
+
+                    try {
+                        if (s.getString("status_code").equals("200")) {
+                            String response = s.getString("response");
+
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONArray lists = jsonObject.getJSONArray("lists");
+
+                            for (int i = 0; i < lists.length(); i++) {
+                                JSONObject obj = lists.getJSONObject(i);
+                                String name = obj.getString("userName");
+                                scope[i] = obj.getString("scope");
+                                int score = obj.getInt("score");
+
+                                //my ranking and score is ...
+                                if(name.equals(mynickname)) {
+                                    myranking.setText(Integer.toString(i+1)+" 등");
+                                    myscore.setText(Integer.toString(score)+ " 점");
+
+                                }else{
+                                    myranking.setText("non");
+                                    myscore.setText("non");
+
+                                }
+                                // private || public
+                                if(scope[i].equals("PRIVATE")){
+                                    int finalI = i;
+                                    gotoBtn[i+1].setOnClickListener(new View.OnClickListener() {
+                                        public void onClick(View view) {
+                                            Ranking_main.toast.show();
+                                            gotoBtn[finalI +1].setEnabled(false);
+                                        }
+                                    });
+                                }
+                                // ranking view
+                                try {
+                                    view_nickname[i+1].setText(name);
+                                    view_score[i+1].setText(Integer.toString(score));
+                                }catch (NullPointerException e){
+
+                                }
+
+                            }
+
+                        }
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
 
-                }
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
+
+
         }
     }
 }

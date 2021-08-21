@@ -183,15 +183,20 @@ public class User_settings extends Fragment {
         protected void onPostExecute(JSONObject s) {
             super.onPostExecute(s);
 
-            //id loading
+//            id loading
             try {
                 if (s.getString("status_code").equals("200")) {
 
                     String response = s.getString("response");
                     JSONObject jsonObject = new JSONObject(response);
-                    String nickname = jsonObject.getString("nickName");
 
+                    String nickname = jsonObject.getString("nickName");
+                    int weight = jsonObject.getInt("weight");
+                    int height = jsonObject.getInt("height");
                     settingsId.setText(nickname);
+
+                    save(nickname, weight, height);
+
 
                 }
 
@@ -201,5 +206,19 @@ public class User_settings extends Fragment {
 
         }
 
+    }
+
+    public void save(String nickname,int weight,int height){
+
+
+        SharedPreferences sp = this.getActivity().getSharedPreferences("info", MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sp.edit();
+
+        editor.putString("nickname", nickname);
+        editor.putInt("weight", weight);
+        editor.putInt("height", height);
+
+        editor.commit();
     }
 }

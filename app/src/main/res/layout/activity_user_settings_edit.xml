@@ -70,7 +70,7 @@
             <Button
                 android:id="@+id/nicknameBtn"
                 android:layout_width="6dp"
-                android:layout_height="34dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:includeFontPadding="false"
                 android:text="edit"
@@ -146,11 +146,11 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/weightEdit"
+                    android:id="@+id/weightHint"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="" />
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -176,12 +176,11 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/heightEdit"
+                    android:id="@+id/heightHint"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="" />
-
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
+
         </LinearLayout>
 
         <ImageView

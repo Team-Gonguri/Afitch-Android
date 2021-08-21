@@ -5,6 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -35,7 +36,7 @@ public class Ranking_detail extends Fragment  {
     ImageView detailLogo;
     String videourl,accessToken;
     VideoView videoView;
-    int pageId;
+    int participationNum;
 
 
 
@@ -56,7 +57,7 @@ public class Ranking_detail extends Fragment  {
         accessToken = sp.getString("accessToken",null);
 
         SharedPreferences page = this.getActivity().getSharedPreferences("page", MODE_PRIVATE);
-        pageId = page.getInt("page",0);
+        participationNum = page.getInt("page",0);//participation num
 
         commentid = (TextView) view.findViewById(R.id.commentid);
         exerciseKind = (TextView) view.findViewById(R.id.exerciseKind);
@@ -88,7 +89,8 @@ public class Ranking_detail extends Fragment  {
         participation[9] = (TextView) view.findViewById(R.id.participation11);
 
         //input comments
-        String addcommenturl = "http://3.36.65.27:8080/exercises/3/participation/1/comment?authorities=ROLE_USER";
+        int exerciseNum = 3;
+        String addcommenturl = "http://3.36.65.27:8080/exercises/"+exerciseNum+"/participation/"+participationNum+"/comment?authorities=ROLE_USER";
         JSONObject comments = new JSONObject();
         addcomments = (EditText) view.findViewById(R.id.addcomments);
         addcommentsBtn = view.findViewById(R.id.addcommentsBtn);
@@ -106,16 +108,23 @@ public class Ranking_detail extends Fragment  {
             }
         });
 
-        detailLogo = (ImageView) view.findViewById(R.id.detailLogo);
+        //go to home
+//        Intent intent = new Intent(getActivity(),Home_main.class);
+//
+//        detailLogo = (ImageView) view.findViewById(R.id.detailLogo);
+//        detailLogo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(intent);
+//            }
+//        });
 
 
-        String exercise_num = "3";//화면전환시 바뀜 api 받아오기 = pageId;
-        String url = "http://3.36.65.27:8080/exercises/3/participation/1?authorities=ROLE_USER";
+        String url = "http://3.36.65.27:8080/exercises/"+exerciseNum+"/participation/"+participationNum+"?authorities=ROLE_USER";
         JSONObject values = new JSONObject();
 
         Ranking_detail.NetworkTask networkTask = new Ranking_detail.NetworkTask(url, "get", true, values,1);
         networkTask.execute();
-
 
         return view;
     }
@@ -150,13 +159,11 @@ public class Ranking_detail extends Fragment  {
 
             super.onPostExecute(s);
             try {
-
                 if (s.getString("status_code").equals("200")) {
-
 
                     switch (num) {
                         case 1:
-                            Log.d("tag", "hello case 1");
+                            Log.d("tag", "get data");
 
                             String response = s.getString("response");
 
@@ -166,11 +173,13 @@ public class Ranking_detail extends Fragment  {
                             String userName = jsonObject.getString("nickName");
                             int commentnum = jsonObject.getInt("commentNum");
                             videourl = jsonObject.getString("url");
+                            Log.d("url", videourl);
 
                             //url + accesstoken
-                            JSONObject v = new JSONObject();
-                            NetworkTask networkTask = new NetworkTask(videourl, "get", true, v, 2);
-                            networkTask.execute();
+//                            JSONObject v = new JSONObject();
+//                            NetworkTask networkTask = new NetworkTask(videourl, "get", true, v, 2);
+//                            networkTask.execute();
+//                            Log.d("video", "execute");
 
                             commentid.setText(userName);
                             commentNum.setText(Integer.toString(commentnum));
@@ -184,6 +193,25 @@ public class Ranking_detail extends Fragment  {
                                 try {
                                     participation[i].setText(name + " : ");
                                     comment[i].setText(text);
+
+                                    videoView.setVideoURI(Uri.parse("file://"+videourl));
+//                                    videoView.setVideoURI(Uri.parse(videourl));
+
+                                    videoView.setMediaController(new MediaController(getActivity()));
+                                    videoView.requestFocus();
+
+
+                                    videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                                        @Override
+                                        public void onPrepared(MediaPlayer mp) {
+                                            videoView.seekTo(0);
+                                            videoView.start();
+                                        }
+
+                                    });
+
+
+
                                 } catch (NullPointerException e) {
 
                                 }
@@ -194,19 +222,9 @@ public class Ranking_detail extends Fragment  {
 
                         case 2:
 
-                            Log.d("tag", "hello case 2");
-                            System.out.println(s);
+                            Log.d("video", "onPostExecute");
+                            Log.d("video", s.toString());
 
-                            videoView.setMediaController(new MediaController(getActivity()));
-                            videoView.setVideoURI(Uri.parse(videourl));
-
-                            videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                                @Override
-                                public void onPrepared(MediaPlayer mp) {
-                                    videoView.start();
-                                }
-
-                            });
 
                             break;
 

@@ -39,6 +39,8 @@ public class RequestHttpURLConnection {
                 URL url = new URL(_url);
                 urlConn = (HttpURLConnection) url.openConnection();
 
+
+
                 // [2-1]. urlConn 설정.
                 Log.d("체크","2-1 urlConn 설정");
                 urlConn.setConnectTimeout(15000);
@@ -51,8 +53,10 @@ public class RequestHttpURLConnection {
                 }
                 else if (method.equals("get"))
                         urlConn.setRequestMethod("GET");
+
                 else if(method.equals("put"))
                     urlConn.setRequestMethod("PUT");
+
                 if (header != null & !header.equals(""))
                     urlConn.setRequestProperty("Authorization", header);
                 urlConn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
@@ -89,6 +93,13 @@ public class RequestHttpURLConnection {
 //                            isAnd = true;
 //                    }
 //                    Log.d("sbparam" , String.valueOf(sbParams));
+                }
+                else if(method.equals("put")){
+                    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(urlConn.getOutputStream()));
+                    bw.write(_params.toString()); // 출력 스트림에 출력.
+                    bw.flush(); // 출력 스트림을 플러시(비운다)하고 버퍼링 된 모든 출력 바이트를 강제 실행.
+                    Log.d("체크","bw.flush");
+                    bw.close(); // 출력 스트림을 닫고 모든 시스템 자원을 해제.
                 }
 
                 if (response == true) {

@@ -24,7 +24,8 @@ public class User_settings_edit extends Fragment {
     public Button gotoSave;
     public EditText weightEdit, heightEdit, yearEdit;
     public TextView settingsId;
-    String weight, height, accessToken;
+    String weight, height, accessToken,savenickname;
+    int saveheight,saveweight;
     JSONObject name = new JSONObject();
 
 
@@ -45,20 +46,24 @@ public class User_settings_edit extends Fragment {
         SharedPreferences sp = this.getActivity().getSharedPreferences("file", MODE_PRIVATE);
         accessToken = sp.getString("accessToken",null);
 
+        SharedPreferences info = this.getActivity().getSharedPreferences("info", MODE_PRIVATE);
+        savenickname = info.getString("nickname",null);
+        saveweight = info.getInt("weight", 0);
+        saveheight = info.getInt("height", 0);
+        System.out.println(saveweight);
 
-        //id loading
+
+        //id weight height loading ...
         settingsId = (TextView) view.findViewById(R.id.settingsId);
-        String url = "http://3.36.65.27:8080/user?authorities=ROLE_USER";
+        weightEdit = (EditText) view.findViewById(R.id.weightHint);
+        heightEdit = (EditText) view.findViewById(R.id.heightHint);
 
-        User_settings_edit.NetworkTask networkTask = new User_settings_edit.NetworkTask(url,"get",true,name,3);
-        networkTask.execute();
+        settingsId.setText(savenickname);
+        heightEdit.setHint(Integer.toString(saveheight));
+        weightEdit.setHint(Integer.toString(saveweight));
 
-        //edit height weight
-        weightEdit = (EditText) view.findViewById(R.id.weightEdit);
-        heightEdit = (EditText) view.findViewById(R.id.weightEdit);
-
+        //weight height save
         gotoSave = (Button) view.findViewById(R.id.gotoSave);
-
         gotoSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,8 +73,10 @@ public class User_settings_edit extends Fragment {
                 String url = "http://3.36.65.27:8080/user?authorities=ROLE_USER";
                 JSONObject edit = new JSONObject();
                 try {
-                    edit.put("height", height);
+                    edit.put("nickname", savenickname);
                     edit.put("weight", weight);
+                    edit.put("height", height);
+                    System.out.println(edit);
 
 
                 } catch (JSONException e) {
@@ -77,12 +84,13 @@ public class User_settings_edit extends Fragment {
                 }
 
                 // AsyncTask를 통해 HttpURLConnection 수행.
-                NetworkTask networkTask = new NetworkTask(url, "post", true, edit, 1); //height weight change
+                NetworkTask networkTask = new NetworkTask(url, "put", true, edit, 2); //height weight change
                 networkTask.execute();
 
                 //화면 전환
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.onFragmentChanged(1);
+
             }
         });
 
@@ -109,6 +117,8 @@ public class User_settings_edit extends Fragment {
                         try {
 
                             changename.put("nickName", value);
+                            changename.put("weight",saveweight);
+                            changename.put("height",saveheight);
                             System.out.println(changename);
 
                         } catch (JSONException e) {
@@ -162,40 +172,54 @@ public class User_settings_edit extends Fragment {
             switch (num) {
                 case 1:
 
-                case 2:
                     try {
                         if (s.getString("status_code").equals("200")) {
-                            System.out.println(s);
-                            Log.d("t", "edit success");
+                            System.out.println("add ok");
                         }
-
-                    } catch (JSONException e) {
+                    }catch(JSONException e){
                         e.printStackTrace();
                     }
+
+
                     break;
-                case 3:
+                case 2: //edit nickname
                     try {
                         if (s.getString("status_code").equals("200")) {
-
-                            String response = s.getString("response");
-                            JSONObject jsonObject = new JSONObject(response);
-                            String nickname = jsonObject.getString("nickName");
-                            int hintheight = jsonObject.getInt("height");
-                            int hintweight = jsonObject.getInt("weight");
-                            System.out.println(hintheight + " " +hintweight);
-
-
-                            settingsId.setText(nickname);
-                            heightEdit.setHint(Integer.toString(hintheight));
-                            weightEdit.setHint(Integer.toString(hintweight));
-
-
+                            System.out.println("add ok");
+                        }else{
+                            Log.d("tag", "fail");
                         }
-
-                    } catch (JSONException e) {
+                    }catch(JSONException e){
                         e.printStackTrace();
                     }
+
                     break;
+
+
+
+//                case 3:
+//                    try {
+//                        if (s.getString("status_code").equals("200")) {
+//
+//                            String response = s.getString("response");
+//                            JSONObject jsonObject = new JSONObject(response);
+//                            String nickname = jsonObject.getString("nickName");
+//                            int hintheight = jsonObject.getInt("height");
+//                            int hintweight = jsonObject.getInt("weight");
+//                            System.out.println(hintheight + " " +hintweight);
+//
+//
+//                            settingsId.setText(nickname);
+//                            heightEdit.setHint(Integer.toString(hintheight));
+//                            weightEdit.setHint(Integer.toString(hintweight));
+//
+//
+//                        }
+//
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                    break;
 
 
             }
